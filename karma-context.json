@@ -1,0 +1,1203 @@
+{
+    "@context": {
+        "E10_Transfer_of_Custody": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E10_Transfer_of_Custody", 
+            "@type": "@id"
+        }, 
+        "E11_Modification": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E11_Modification", 
+            "@type": "@id"
+        }, 
+        "E12_Production": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E12_Production", 
+            "@type": "@id"
+        }, 
+        "E13_Attribute_Assignment": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment", 
+            "@type": "@id"
+        }, 
+        "E14_Condition_Assessment": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E14_Condition_Assessment", 
+            "@type": "@id"
+        }, 
+        "E15_Identifier_Assignment": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E15_Identifier_Assignment", 
+            "@type": "@id"
+        }, 
+        "E16_Measurement": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E16_Measurement", 
+            "@type": "@id"
+        }, 
+        "E17_Type_Assignment": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment", 
+            "@type": "@id"
+        }, 
+        "E18_Physical_Thing": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing", 
+            "@type": "@id"
+        }, 
+        "E19_Physical_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object", 
+            "@type": "@id"
+        }, 
+        "E1_CRM_Entity": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity", 
+            "@type": "@id"
+        }, 
+        "E20_Biological_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E20_Biological_Object", 
+            "@type": "@id"
+        }, 
+        "E21_Person": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E21_Person", 
+            "@type": "@id"
+        }, 
+        "E22_Man-Made_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object", 
+            "@type": "@id"
+        }, 
+        "E24_Physical_Man-Made_Thing": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Man-Made_Thing", 
+            "@type": "@id"
+        }, 
+        "E25_Man-Made_Feature": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E25_Man-Made_Feature", 
+            "@type": "@id"
+        }, 
+        "E26_Physical_Feature": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E26_Physical_Feature", 
+            "@type": "@id"
+        }, 
+        "E27_Site": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E27_Site", 
+            "@type": "@id"
+        }, 
+        "E28_Conceptual_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object", 
+            "@type": "@id"
+        }, 
+        "E29_Design_or_Procedure": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure", 
+            "@type": "@id"
+        }, 
+        "E2_Temporal_Entity": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E2_Temporal_Entity", 
+            "@type": "@id"
+        }, 
+        "E30_Right": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E30_Right", 
+            "@type": "@id"
+        }, 
+        "E31_Document": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E31_Document", 
+            "@type": "@id"
+        }, 
+        "E32_Authority_Document": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document", 
+            "@type": "@id"
+        }, 
+        "E33_Linguistic_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object", 
+            "@type": "@id"
+        }, 
+        "E34_Inscription": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E34_Inscription", 
+            "@type": "@id"
+        }, 
+        "E35_Title": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E35_Title", 
+            "@type": "@id"
+        }, 
+        "E36_Visual_Item": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item", 
+            "@type": "@id"
+        }, 
+        "E37_Mark": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E37_Mark", 
+            "@type": "@id"
+        }, 
+        "E38_Image": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E38_Image", 
+            "@type": "@id"
+        }, 
+        "E39_Actor": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor", 
+            "@type": "@id"
+        }, 
+        "E3_Condition_State": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E3_Condition_State", 
+            "@type": "@id"
+        }, 
+        "E40_Legal_Body": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E40_Legal_Body", 
+            "@type": "@id"
+        }, 
+        "E41_Appellation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E41_Appellation", 
+            "@type": "@id"
+        }, 
+        "E42_Identifier": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier", 
+            "@type": "@id"
+        }, 
+        "E44_Place_Appellation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E44_Place_Appellation", 
+            "@type": "@id"
+        }, 
+        "E45_Address": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E45_Address", 
+            "@type": "@id"
+        }, 
+        "E46_Section_Definition": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E46_Section_Definition", 
+            "@type": "@id"
+        }, 
+        "E47_Spatial_Coordinates": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E47_Spatial_Coordinates", 
+            "@type": "@id"
+        }, 
+        "E48_Place_Name": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name", 
+            "@type": "@id"
+        }, 
+        "E49_Time_Appellation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E49_Time_Appellation", 
+            "@type": "@id"
+        }, 
+        "E4_Period": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E4_Period", 
+            "@type": "@id"
+        }, 
+        "E50_Date": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E50_Date", 
+            "@type": "@id"
+        }, 
+        "E51_Contact_Point": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point", 
+            "@type": "@id"
+        }, 
+        "E52_Time-Span": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span", 
+            "@type": "@id"
+        }, 
+        "E53_Place": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E53_Place", 
+            "@type": "@id"
+        }, 
+        "E54_Dimension": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension", 
+            "@type": "@id"
+        }, 
+        "E55_Type": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E55_Type", 
+            "@type": "@id"
+        }, 
+        "E56_Language": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E56_Language", 
+            "@type": "@id"
+        }, 
+        "E57_Material": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E57_Material", 
+            "@type": "@id"
+        }, 
+        "E58_Measurement_Unit": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit", 
+            "@type": "@id"
+        }, 
+        "E5_Event": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E5_Event", 
+            "@type": "@id"
+        }, 
+        "E63_Beginning_of_Existence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence", 
+            "@type": "@id"
+        }, 
+        "E64_End_of_Existence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence", 
+            "@type": "@id"
+        }, 
+        "E65_Creation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E65_Creation", 
+            "@type": "@id"
+        }, 
+        "E66_Formation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation", 
+            "@type": "@id"
+        }, 
+        "E67_Birth": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E67_Birth", 
+            "@type": "@id"
+        }, 
+        "E68_Dissolution": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E68_Dissolution", 
+            "@type": "@id"
+        }, 
+        "E69_Death": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E69_Death", 
+            "@type": "@id"
+        }, 
+        "E6_Destruction": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E6_Destruction", 
+            "@type": "@id"
+        }, 
+        "E70_Thing": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E70_Thing", 
+            "@type": "@id"
+        }, 
+        "E71_Man-Made_Thing": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing", 
+            "@type": "@id"
+        }, 
+        "E72_Legal_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E72_Legal_Object", 
+            "@type": "@id"
+        }, 
+        "E73_Information_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object", 
+            "@type": "@id"
+        }, 
+        "E74_Group": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E74_Group", 
+            "@type": "@id"
+        }, 
+        "E75_Conceptual_Object_Appellation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E75_Conceptual_Object_Appellation", 
+            "@type": "@id"
+        }, 
+        "E77_Persistent_Item": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item", 
+            "@type": "@id"
+        }, 
+        "E78_Collection": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E78_Collection", 
+            "@type": "@id"
+        }, 
+        "E79_Part_Addition": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E79_Part_Addition", 
+            "@type": "@id"
+        }, 
+        "E7_Activity": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E7_Activity", 
+            "@type": "@id"
+        }, 
+        "E80_Part_Removal": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E80_Part_Removal", 
+            "@type": "@id"
+        }, 
+        "E81_Transformation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E81_Transformation", 
+            "@type": "@id"
+        }, 
+        "E82_Actor_Appellation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation", 
+            "@type": "@id"
+        }, 
+        "E83_Type_Creation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E83_Type_Creation", 
+            "@type": "@id"
+        }, 
+        "E84_Information_Carrier": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier", 
+            "@type": "@id"
+        }, 
+        "E85_Joining": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E85_Joining", 
+            "@type": "@id"
+        }, 
+        "E86_Leaving": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E86_Leaving", 
+            "@type": "@id"
+        }, 
+        "E87_Curation_Activity": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E87_Curation_Activity", 
+            "@type": "@id"
+        }, 
+        "E89_Propositional_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object", 
+            "@type": "@id"
+        }, 
+        "E8_Acquisition": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition", 
+            "@type": "@id"
+        }, 
+        "E90_Symbolic_Object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E90_Symbolic_Object", 
+            "@type": "@id"
+        }, 
+        "E92_Spacetime_Volume": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume", 
+            "@type": "@id"
+        }, 
+        "E93_Presence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E93_Presence", 
+            "@type": "@id"
+        }, 
+        "E9_Move": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/E9_Move", 
+            "@type": "@id"
+        }, 
+        "P100_was_death_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P100_was_death_of"
+        }, 
+        "P100i_died_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P100i_died_in"
+        }, 
+        "P101_had_as_general_use": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P101_had_as_general_use"
+        }, 
+        "P101i_was_use_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P101i_was_use_of"
+        }, 
+        "P102_has_title": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P102_has_title"
+        }, 
+        "P102i_is_title_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P102i_is_title_of"
+        }, 
+        "P103_was_intended_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P103_was_intended_for"
+        }, 
+        "P103i_was_intention_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P103i_was_intention_of"
+        }, 
+        "P104_is_subject_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to"
+        }, 
+        "P104i_applies_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P104i_applies_to"
+        }, 
+        "P105_right_held_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P105_right_held_by"
+        }, 
+        "P105i_has_right_on": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P105i_has_right_on"
+        }, 
+        "P106_is_composed_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"
+        }, 
+        "P106i_forms_part_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"
+        }, 
+        "P107_has_current_or_former_member": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P107_has_current_or_former_member"
+        }, 
+        "P107i_is_current_or_former_member_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P107i_is_current_or_former_member_of"
+        }, 
+        "P108_has_produced": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"
+        }, 
+        "P108i_was_produced_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P108i_was_produced_by"
+        }, 
+        "P109_has_current_or_former_curator": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P109_has_current_or_former_curator"
+        }, 
+        "P109i_is_current_or_former_curator_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P109i_is_current_or_former_curator_of"
+        }, 
+        "P10_falls_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P10_falls_within"
+        }, 
+        "P10i_contains": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P10i_contains"
+        }, 
+        "P110_augmented": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P110_augmented"
+        }, 
+        "P110i_was_augmented_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P110i_was_augmented_by"
+        }, 
+        "P111_added": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P111_added"
+        }, 
+        "P111i_was_added_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P111i_was_added_by"
+        }, 
+        "P112_diminished": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P112_diminished"
+        }, 
+        "P112i_was_diminished_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P112i_was_diminished_by"
+        }, 
+        "P113_removed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P113_removed"
+        }, 
+        "P113i_was_removed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P113i_was_removed_by"
+        }, 
+        "P114_is_equal_in_time_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P114_is_equal_in_time_to"
+        }, 
+        "P115_finishes": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P115_finishes"
+        }, 
+        "P115i_is_finished_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P115i_is_finished_by"
+        }, 
+        "P116_starts": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P116_starts"
+        }, 
+        "P116i_is_started_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P116i_is_started_by"
+        }, 
+        "P117_occurs_during": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P117_occurs_during"
+        }, 
+        "P117i_includes": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P117i_includes"
+        }, 
+        "P118_overlaps_in_time_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P118_overlaps_in_time_with"
+        }, 
+        "P118i_is_overlapped_in_time_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P118i_is_overlapped_in_time_by"
+        }, 
+        "P119_meets_in_time_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P119_meets_in_time_with"
+        }, 
+        "P119i_is_met_in_time_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P119i_is_met_in_time_by"
+        }, 
+        "P11_had_participant": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P11_had_participant"
+        }, 
+        "P11i_participated_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P11i_participated_in"
+        }, 
+        "P120_occurs_before": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P120_occurs_before"
+        }, 
+        "P120i_occurs_after": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P120i_occurs_after"
+        }, 
+        "P121_overlaps_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P121_overlaps_with"
+        }, 
+        "P122_borders_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P122_borders_with"
+        }, 
+        "P123_resulted_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P123_resulted_in"
+        }, 
+        "P123i_resulted_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P123i_resulted_from"
+        }, 
+        "P124_transformed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P124_transformed"
+        }, 
+        "P124i_was_transformed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P124i_was_transformed_by"
+        }, 
+        "P125_used_object_of_type": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P125_used_object_of_type"
+        }, 
+        "P125i_was_type_of_object_used_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P125i_was_type_of_object_used_in"
+        }, 
+        "P126_employed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P126_employed"
+        }, 
+        "P126i_was_employed_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P126i_was_employed_in"
+        }, 
+        "P127_has_broader_term": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term"
+        }, 
+        "P127i_has_narrower_term": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term"
+        }, 
+        "P128_carries": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P128_carries"
+        }, 
+        "P128i_is_carried_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P128i_is_carried_by"
+        }, 
+        "P129_is_about": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P129_is_about"
+        }, 
+        "P129i_is_subject_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of"
+        }, 
+        "P12_occurred_in_the_presence_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P12_occurred_in_the_presence_of"
+        }, 
+        "P12i_was_present_at": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P12i_was_present_at"
+        }, 
+        "P130_shows_features_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of"
+        }, 
+        "P130i_features_are_also_found_on": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on"
+        }, 
+        "P131_is_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P131_is_identified_by"
+        }, 
+        "P131i_identifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P131i_identifies"
+        }, 
+        "P132_overlaps_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P132_overlaps_with"
+        }, 
+        "P133_is_separated_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P133_is_separated_from"
+        }, 
+        "P134_continued": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P134_continued"
+        }, 
+        "P134i_was_continued_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P134i_was_continued_by"
+        }, 
+        "P135_created_type": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P135_created_type"
+        }, 
+        "P135i_was_created_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P135i_was_created_by"
+        }, 
+        "P136_was_based_on": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P136_was_based_on"
+        }, 
+        "P136i_supported_type_creation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P136i_supported_type_creation"
+        }, 
+        "P137_exemplifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P137_exemplifies"
+        }, 
+        "P137i_is_exemplified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P137i_is_exemplified_by"
+        }, 
+        "P138_represents": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P138_represents"
+        }, 
+        "P138i_has_representation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation"
+        }, 
+        "P139_has_alternative_form": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P139_has_alternative_form"
+        }, 
+        "P13_destroyed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P13_destroyed"
+        }, 
+        "P13i_was_destroyed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P13i_was_destroyed_by"
+        }, 
+        "P140_assigned_attribute_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to"
+        }, 
+        "P140i_was_attributed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by"
+        }, 
+        "P141_assigned": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P141_assigned"
+        }, 
+        "P141i_was_assigned_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by"
+        }, 
+        "P142_used_constituent": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P142_used_constituent"
+        }, 
+        "P142i_was_used_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P142i_was_used_in"
+        }, 
+        "P143_joined": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P143_joined"
+        }, 
+        "P143i_was_joined_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P143i_was_joined_by"
+        }, 
+        "P144_joined_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P144_joined_with"
+        }, 
+        "P144i_gained_member_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P144i_gained_member_by"
+        }, 
+        "P145_separated": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P145_separated"
+        }, 
+        "P145i_left_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P145i_left_by"
+        }, 
+        "P146_separated_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P146_separated_from"
+        }, 
+        "P146i_lost_member_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P146i_lost_member_by"
+        }, 
+        "P147_curated": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P147_curated"
+        }, 
+        "P147i_was_curated_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P147i_was_curated_by"
+        }, 
+        "P148_has_component": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P148_has_component"
+        }, 
+        "P148i_is_component_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P148i_is_component_of"
+        }, 
+        "P149_is_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P149_is_identified_by"
+        }, 
+        "P149i_identifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P149i_identifies"
+        }, 
+        "P14_carried_out_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"
+        }, 
+        "P14i_performed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P14i_performed"
+        }, 
+        "P150_defines_typical_parts_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P150_defines_typical_parts_of"
+        }, 
+        "P150i_defines_typical_wholes_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P150i_defines_typical_wholes_for"
+        }, 
+        "P151_was_formed_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P151_was_formed_from"
+        }, 
+        "P151i_participated_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P151i_participated_in"
+        }, 
+        "P152_has_parent": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P152_has_parent"
+        }, 
+        "P152i_is_parent_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P152i_is_parent_of"
+        }, 
+        "P156_occupies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P156_occupies"
+        }, 
+        "P156i_is_occupied_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P156i_is_occupied_by"
+        }, 
+        "P157_is_at_rest_relative_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P157_is_at_rest_relative_to"
+        }, 
+        "P157i_provides_reference_space_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P157i_provides_reference_space_for"
+        }, 
+        "P15_was_influenced_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P15_was_influenced_by"
+        }, 
+        "P15i_influenced": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P15i_influenced"
+        }, 
+        "P160_has_temporal_projection": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection"
+        }, 
+        "P160i_is_temporal_projection_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of"
+        }, 
+        "P161_has_spatial_projection": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection"
+        }, 
+        "P161i_is_spatial_projection_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of"
+        }, 
+        "P164_during": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P164_during"
+        }, 
+        "P164i_was_time-span_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P164i_was_time-span_of"
+        }, 
+        "P165_incorporates": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P165_incorporates"
+        }, 
+        "P165i_is_incorporated_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P165i_is_incorporated_in"
+        }, 
+        "P166_was_a_presence_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P166_was_a_presence_of"
+        }, 
+        "P166i_had_presence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P166i_had_presence"
+        }, 
+        "P167_was_at": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P167_was_at"
+        }, 
+        "P167i_was_place_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P167i_was_place_of"
+        }, 
+        "P168_place_is_defined_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P168_place_is_defined_by"
+        }, 
+        "P16_used_specific_object": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"
+        }, 
+        "P16i_was_used_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"
+        }, 
+        "P17_was_motivated_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by"
+        }, 
+        "P17i_motivated": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P17i_motivated"
+        }, 
+        "P19_was_intended_use_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P19_was_intended_use_of"
+        }, 
+        "P19i_was_made_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P19i_was_made_for"
+        }, 
+        "P1_is_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"
+        }, 
+        "P1i_identifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P1i_identifies"
+        }, 
+        "P20_had_specific_purpose": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P20_had_specific_purpose"
+        }, 
+        "P20i_was_purpose_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P20i_was_purpose_of"
+        }, 
+        "P21_had_general_purpose": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"
+        }, 
+        "P21i_was_purpose_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"
+        }, 
+        "P22_transferred_title_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P22_transferred_title_to"
+        }, 
+        "P22i_acquired_title_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P22i_acquired_title_through"
+        }, 
+        "P23_transferred_title_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P23_transferred_title_from"
+        }, 
+        "P23i_surrendered_title_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P23i_surrendered_title_through"
+        }, 
+        "P24_transferred_title_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P24_transferred_title_of"
+        }, 
+        "P24i_changed_ownership_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P24i_changed_ownership_through"
+        }, 
+        "P25_moved": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P25_moved"
+        }, 
+        "P25i_moved_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P25i_moved_by"
+        }, 
+        "P26_moved_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P26_moved_to"
+        }, 
+        "P26i_was_destination_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P26i_was_destination_of"
+        }, 
+        "P27_moved_from": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P27_moved_from"
+        }, 
+        "P27i_was_origin_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P27i_was_origin_of"
+        }, 
+        "P28_custody_surrendered_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P28_custody_surrendered_by"
+        }, 
+        "P28i_surrendered_custody_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P28i_surrendered_custody_through"
+        }, 
+        "P29_custody_received_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P29_custody_received_by"
+        }, 
+        "P29i_received_custody_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P29i_received_custody_through"
+        }, 
+        "P2_has_type": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
+        }, 
+        "P2i_is_type_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"
+        }, 
+        "P30_transferred_custody_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P30_transferred_custody_of"
+        }, 
+        "P30i_custody_transferred_through": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P30i_custody_transferred_through"
+        }, 
+        "P31_has_modified": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P31_has_modified"
+        }, 
+        "P31i_was_modified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P31i_was_modified_by"
+        }, 
+        "P32_used_general_technique": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P32_used_general_technique"
+        }, 
+        "P32i_was_technique_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P32i_was_technique_of"
+        }, 
+        "P33_used_specific_technique": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique"
+        }, 
+        "P33i_was_used_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P33i_was_used_by"
+        }, 
+        "P34_concerned": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P34_concerned"
+        }, 
+        "P34i_was_assessed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P34i_was_assessed_by"
+        }, 
+        "P35_has_identified": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P35_has_identified"
+        }, 
+        "P35i_was_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P35i_was_identified_by"
+        }, 
+        "P37_assigned": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P37_assigned"
+        }, 
+        "P37i_was_assigned_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P37i_was_assigned_by"
+        }, 
+        "P38_deassigned": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P38_deassigned"
+        }, 
+        "P38i_was_deassigned_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P38i_was_deassigned_by"
+        }, 
+        "P39_measured": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P39_measured"
+        }, 
+        "P39i_was_measured_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P39i_was_measured_by"
+        }, 
+        "P3_has_note": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note"
+        }, 
+        "P40_observed_dimension": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P40_observed_dimension"
+        }, 
+        "P40i_was_observed_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P40i_was_observed_in"
+        }, 
+        "P41_classified": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P41_classified"
+        }, 
+        "P41i_was_classified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P41i_was_classified_by"
+        }, 
+        "P42_assigned": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P42_assigned"
+        }, 
+        "P42i_was_assigned_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P42i_was_assigned_by"
+        }, 
+        "P43_has_dimension": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension"
+        }, 
+        "P43i_is_dimension_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of"
+        }, 
+        "P44_has_condition": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P44_has_condition"
+        }, 
+        "P44i_is_condition_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P44i_is_condition_of"
+        }, 
+        "P45_consists_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P45_consists_of"
+        }, 
+        "P45i_is_incorporated_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P45i_is_incorporated_in"
+        }, 
+        "P46_is_composed_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of"
+        }, 
+        "P46i_forms_part_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of"
+        }, 
+        "P48_has_preferred_identifier": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P48_has_preferred_identifier"
+        }, 
+        "P48i_is_preferred_identifier_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P48i_is_preferred_identifier_of"
+        }, 
+        "P49_has_former_or_current_keeper": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P49_has_former_or_current_keeper"
+        }, 
+        "P49i_is_former_or_current_keeper_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P49i_is_former_or_current_keeper_of"
+        }, 
+        "P4_has_time-span": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"
+        }, 
+        "P4i_is_time-span_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of"
+        }, 
+        "P50_has_current_keeper": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P50_has_current_keeper"
+        }, 
+        "P50i_is_current_keeper_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P50i_is_current_keeper_of"
+        }, 
+        "P51_has_former_or_current_owner": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P51_has_former_or_current_owner"
+        }, 
+        "P51i_is_former_or_current_owner_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P51i_is_former_or_current_owner_of"
+        }, 
+        "P52_has_current_owner": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P52_has_current_owner"
+        }, 
+        "P52i_is_current_owner_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P52i_is_current_owner_of"
+        }, 
+        "P53_has_former_or_current_location": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location"
+        }, 
+        "P53i_is_former_or_current_location_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P53i_is_former_or_current_location_of"
+        }, 
+        "P54_has_current_permanent_location": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P54_has_current_permanent_location"
+        }, 
+        "P54i_is_current_permanent_location_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P54i_is_current_permanent_location_of"
+        }, 
+        "P55_has_current_location": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P55_has_current_location"
+        }, 
+        "P55i_currently_holds": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P55i_currently_holds"
+        }, 
+        "P56_bears_feature": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P56_bears_feature"
+        }, 
+        "P56i_is_found_on": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P56i_is_found_on"
+        }, 
+        "P57_has_number_of_parts": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P57_has_number_of_parts"
+        }, 
+        "P58_has_section_definition": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P58_has_section_definition"
+        }, 
+        "P58i_defines_section": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P58i_defines_section"
+        }, 
+        "P59_has_section": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P59_has_section"
+        }, 
+        "P59i_is_located_on_or_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P59i_is_located_on_or_within"
+        }, 
+        "P5_consists_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P5_consists_of"
+        }, 
+        "P5i_forms_part_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P5i_forms_part_of"
+        }, 
+        "P62_depicts": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P62_depicts"
+        }, 
+        "P62i_is_depicted_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P62i_is_depicted_by"
+        }, 
+        "P65_shows_visual_item": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P65_shows_visual_item"
+        }, 
+        "P65i_is_shown_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P65i_is_shown_by"
+        }, 
+        "P67_refers_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to"
+        }, 
+        "P67i_is_referred_to_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by"
+        }, 
+        "P68_foresees_use_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P68_foresees_use_of"
+        }, 
+        "P68i_use_foreseen_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P68i_use_foreseen_by"
+        }, 
+        "P69_is_associated_with": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P69_is_associated_with"
+        }, 
+        "P70_documents": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P70_documents"
+        }, 
+        "P70i_is_documented_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P70i_is_documented_in"
+        }, 
+        "P71_lists": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P71_lists"
+        }, 
+        "P71i_is_listed_in": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P71i_is_listed_in"
+        }, 
+        "P72_has_language": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P72_has_language"
+        }, 
+        "P72i_is_language_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P72i_is_language_of"
+        }, 
+        "P73_has_translation": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P73_has_translation"
+        }, 
+        "P73i_is_translation_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P73i_is_translation_of"
+        }, 
+        "P74_has_current_or_former_residence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P74_has_current_or_former_residence"
+        }, 
+        "P74i_is_current_or_former_residence_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P74i_is_current_or_former_residence_of"
+        }, 
+        "P75_possesses": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P75_possesses"
+        }, 
+        "P75i_is_possessed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P75i_is_possessed_by"
+        }, 
+        "P76_has_contact_point": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P76_has_contact_point"
+        }, 
+        "P76i_provides_access_to": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P76i_provides_access_to"
+        }, 
+        "P78_is_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P78_is_identified_by"
+        }, 
+        "P78i_identifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P78i_identifies"
+        }, 
+        "P79_beginning_is_qualified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P79_beginning_is_qualified_by"
+        }, 
+        "P7_took_place_at": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at"
+        }, 
+        "P7i_witnessed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed"
+        }, 
+        "P80_end_is_qualified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P80_end_is_qualified_by"
+        }, 
+        "P81_ongoing_throughout": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P81_ongoing_throughout"
+        }, 
+        "P81a_end_of_the_begin": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P81a_end_of_the_begin"
+        }, 
+        "P81b_begin_of_the_end": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P81b_begin_of_the_end"
+        }, 
+        "P82_at_some_time_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within"
+        }, 
+        "P82a_begin_of_the_begin": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin"
+        }, 
+        "P82b_end_of_the_end": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end"
+        }, 
+        "P83_had_at_least_duration": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P83_had_at_least_duration"
+        }, 
+        "P83i_was_minimum_duration_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P83i_was_minimum_duration_of"
+        }, 
+        "P84_had_at_most_duration": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P84_had_at_most_duration"
+        }, 
+        "P84i_was_maximum_duration_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P84i_was_maximum_duration_of"
+        }, 
+        "P86_falls_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P86_falls_within"
+        }, 
+        "P86i_contains": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P86i_contains"
+        }, 
+        "P87_is_identified_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P87_is_identified_by"
+        }, 
+        "P87i_identifies": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P87i_identifies"
+        }, 
+        "P89_falls_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P89_falls_within"
+        }, 
+        "P89i_contains": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P89i_contains"
+        }, 
+        "P8_took_place_on_or_within": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P8_took_place_on_or_within"
+        }, 
+        "P8i_witnessed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P8i_witnessed"
+        }, 
+        "P90_has_value": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P90_has_value"
+        }, 
+        "P91_has_unit": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"
+        }, 
+        "P91i_is_unit_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of"
+        }, 
+        "P92_brought_into_existence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence"
+        }, 
+        "P92i_was_brought_into_existence_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by"
+        }, 
+        "P93_took_out_of_existence": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P93_took_out_of_existence"
+        }, 
+        "P93i_was_taken_out_of_existence_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by"
+        }, 
+        "P94_has_created": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P94_has_created"
+        }, 
+        "P94i_was_created_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P94i_was_created_by"
+        }, 
+        "P95_has_formed": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P95_has_formed"
+        }, 
+        "P95i_was_formed_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P95i_was_formed_by"
+        }, 
+        "P96_by_mother": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P96_by_mother"
+        }, 
+        "P96i_gave_birth": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P96i_gave_birth"
+        }, 
+        "P97_from_father": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P97_from_father"
+        }, 
+        "P97i_was_father_for": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P97i_was_father_for"
+        }, 
+        "P98_brought_into_life": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P98_brought_into_life"
+        }, 
+        "P98i_was_born": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P98i_was_born"
+        }, 
+        "P99_dissolved": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P99_dissolved"
+        }, 
+        "P99i_was_dissolved_by": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P99i_was_dissolved_by"
+        }, 
+        "P9_consists_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P9_consists_of"
+        }, 
+        "P9i_forms_part_of": {
+            "@id": "http://www.cidoc-crm.org/cidoc-crm/P9i_forms_part_of"
+        }, 
+        "a": "@type", 
+        "uri": "@id"
+    }
+}
