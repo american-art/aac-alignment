@@ -4,9 +4,7 @@
 	"P131_is_identified_by":{
 		"@type":"E82_Actor_Appellation",
 		"P106_is_composed_of":{
-			"@type": "E82_Actor_Appellation",
-			"@explicit": true,
-        		"rdfs:label": {}
+			"@type": "E82_Actor_Appellation"
 		}
 	}
 }
