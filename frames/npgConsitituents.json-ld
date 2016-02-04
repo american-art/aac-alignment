@@ -1,6 +1,6 @@
 {
 	"@type": "E39_Actor",
-	"@explicit": true
+	"@explicit": true,
 	"fullName":{
 		"@type":"E82_Actor_Appellation",
 	}
