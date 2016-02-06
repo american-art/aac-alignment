@@ -1198,6 +1198,9 @@
             "@id": "http://www.cidoc-crm.org/cidoc-crm/P9i_forms_part_of"
         }, 
         "a": "@type", 
-        "uri": "@id"
+        "uri": "@id",
+        "label": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+        }
     }
 }
