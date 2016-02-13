@@ -6,5 +6,17 @@
 		"P106_is_composed_of":{
 			"@type": "E82_Actor_Appellation"
 		}
+	},
+	"P98i_was_born":{
+		"@type":"E67_Birth1",
+		"P4_has_time-span":{
+			"@type":"E52_Time-Span1"
+		}
+	},
+	"P100i_died_in":{
+		"@type":"E69_Death1",
+		"P4_has_time-span":{
+			"@type":"E52_Time-Span2"
+		}
 	}
 }
