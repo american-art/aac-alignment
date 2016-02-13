@@ -8,15 +8,15 @@
 		}
 	},
 	"P98i_was_born":{
-		"@type":"E67_Birth1",
+		"@type":"E67_Birth",
 		"P4_has_time-span":{
-			"@type":"E52_Time-Span1"
+			"@type":"E52_Time-Span"
 		}
 	},
 	"P100i_died_in":{
-		"@type":"E69_Death1",
+		"@type":"E69_Death",
 		"P4_has_time-span":{
-			"@type":"E52_Time-Span2"
+			"@type":"E52_Time-Span"
 		}
 	}
 }
