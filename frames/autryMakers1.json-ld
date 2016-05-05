@@ -1,13 +1,6 @@
 {
-	"@type":"E22_Man_Made_Object",
-	"P108i_was_produced_by":{
-		"@type": "E12_Production",
-		"P14_carried_out_by":{
-			"@type": "E39_Actor",
-			"P131_is_identified_by":{
-				"@type": "E82_Actor_Appellation"
-			}
-
-		}
+	"@type": "E39_Actor",
+	"P131_is_identified_by":{
+		"@type": "E82_Actor_Appellation"
 	}
 }
