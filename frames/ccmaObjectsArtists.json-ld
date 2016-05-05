@@ -1,8 +1,8 @@
 {
 	"@type": "E39_Actor",
 
-	"P1_is_identified_by":{
-		"@type":"E82_Actor_Appellation"
+	"P140i_was_attributed_by":{
+		"@type":"E15_Identifier_Assignment"
 	},
 	"P98i_was_born":{
 		"@type":"E67_Birth"
