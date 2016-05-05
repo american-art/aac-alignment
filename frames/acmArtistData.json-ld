@@ -1,20 +1,7 @@
 {
 	"@type": "E39_Actor",
 
-	"P107i_is_current_or_former_member_of":{
+	"P1_is_identified_by":{
 		"@type":"E82_Actor_Appellation"
-	},
-	
-	"P98i_was_born":{
-		"@type":"E52_Time-Span",
-		"P4i_is_time-span_of":{
-			"@type":"E67_Birth"
-		}
-	},
-	"P100i_died_in":{
-		"@type":"E52_Time-Span",
-		"P4i_is_time-span_of":{
-			"@type":"E69_Death"
-		}
 	}
 }
