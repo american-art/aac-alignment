@@ -1,22 +1,30 @@
 {
-	"@type": "E39_Actor",
-	"@explicit": true,
-	"a": {},
-	"uri": {},
-
-	"P131_is_identified_by":{
-		"@type":"E82_Actor_Appellation",
-		"@explicit": true,
-		"a": {},
-		"uri": {},
-		"label": {},
-
-		"P106_is_composed_of":{
-			"@type": "E82_Actor_Appellation",
+	"@type": "E22_Man-Made_Object",
+	"P108i_was_produced_by":{
+		"@type": "E12_Production",
+		"P14_carried_out_by":{
+			"@type": "E39_Actor",
 			"@explicit": true,
 			"a": {},
 			"uri": {},
-			"label": {}
+
+			"P131_is_identified_by":{
+				"@type":"E82_Actor_Appellation",
+				"@explicit": true,
+				"a": {},
+				"uri": {},
+				"label": {},
+
+				"P106_is_composed_of":{
+					"@type": "E82_Actor_Appellation",
+					"@explicit": true,
+					"a": {},
+					"uri": {},
+					"label": {}
+				}
+			}
 		}
 	}
 }
+
+
