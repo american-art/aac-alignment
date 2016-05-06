@@ -6,7 +6,7 @@
 		"P106_is_composed_of":{
 			"@type": "E82_Actor_Appellation",
 			"@type": "E82_Actor_Appellation",
-			"@type": "E82_Actor_Appellation",
+			"@type": "E82_Actor_Appellation"
 		}
 	}
 }
