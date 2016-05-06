@@ -1,11 +1,15 @@
 {
 	"@type": "E22_Man-Made_Object",
 	"@explicit": true,
+	"a": {},
+	"uri": {},
 
 	"P108i_was_produced_by":{
 		"@type": "E12_Production",
 		"@explicit": true,
-		
+		"a": {},
+		"uri": {},
+
 		"P14_carried_out_by":{
 			"@type": "E39_Actor",
 			"@explicit": true,
