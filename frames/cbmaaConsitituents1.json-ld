@@ -13,7 +13,9 @@
 			"@type": "E82_Actor_Appellation",
 			"@explicit": true,
 			"classLink": {},
-			"label": {}
+			"label": {},
+			"P2_has_type":{}
+
 		}
 	}
 }
