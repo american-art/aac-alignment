@@ -1,6 +1,0 @@
-{
-	"@type": "E39_Actor",
-	"P131_is_identified_by":{
-		"@type": "E82_Actor_Appellation"
-	}
-}
