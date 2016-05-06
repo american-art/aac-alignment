@@ -1,12 +1,19 @@
 {
 	"@type": "E39_Actor",
+	"@explicit": true,
+	"classLink": {},
 
 	"P131_is_identified_by":{
 		"@type":"E82_Actor_Appellation",
+		"@explicit": true,
+		"classLink": {},
+		"label": {},
+
 		"P106_is_composed_of":{
 			"@type": "E82_Actor_Appellation",
-			"@type": "E82_Actor_Appellation",
-			"@type": "E82_Actor_Appellation"
+			"@explicit": true,
+			"classLink": {},
+			"label": {}
 		}
 	}
 }
