@@ -1,0 +1,22 @@
+{
+	"@type": "E39_Actor",
+
+	"P131_is_identified_by":{
+		"@type":"E82_Actor_Appellation",
+		"P106_is_composed_of":{
+			"@type": "E82_Actor_Appellation"
+		}
+	},
+	"P98i_was_born":{
+		"@type":"E67_Birth",
+		"P4_has_time-span":{
+			"@type":"E52_Time-Span"
+		}
+	},
+	"P100i_died_in":{
+		"@type":"E69_Death",
+		"P4_has_time-span":{
+			"@type":"E52_Time-Span"
+		}
+	}
+}
