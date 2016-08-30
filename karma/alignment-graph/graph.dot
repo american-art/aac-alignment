@@ -2,4 +2,39 @@ digraph n0 {
 fontcolor="blue"
 remincross="true"
 label="main graph"
+n1[style="filled",color="white",fillcolor="lightgray",label="E12_Production1"];
+n2[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span1"];
+n3[style="filled",color="white",fillcolor="lightgray",label="E22_Man-Made_Object1"];
+n4[style="filled",color="white",fillcolor="lightgray",label="E54_Dimension1"];
+n5[style="filled",color="white",fillcolor="lightgray",label="E55_Type1"];
+n6[style="filled",color="white",fillcolor="lightgray",label="E57_Material1"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="Medium"];
+n8[shape="plaintext",style="filled",fillcolor="gold",label="DateEndValid"];
+n9[shape="plaintext",style="filled",fillcolor="gold",label="DateBeginValid"];
+n10[shape="plaintext",style="filled",fillcolor="gold",label="Classification"];
+n11[shape="plaintext",style="filled",fillcolor="gold",label="ObjectURI"];
+n12[shape="plaintext",style="filled",fillcolor="gold",label="Dated"];
+n13[shape="plaintext",style="filled",fillcolor="gold",label="ProductionDateURI"];
+n14[shape="plaintext",style="filled",fillcolor="gold",label="Dimensions"];
+n15[shape="plaintext",style="filled",fillcolor="gold",label="MediumURI"];
+n16[shape="plaintext",style="filled",fillcolor="gold",label="DimensionURI"];
+n17[shape="plaintext",style="filled",fillcolor="gold",label="ClassificationURI"];
+n18[shape="plaintext",style="filled",fillcolor="gold",label="ProductionURI"];
+n1 -> n2[color="brown",fontcolor="black",label="P4_has_time-span\nw=1.0"]
+n3 -> n1[color="brown",fontcolor="black",label="P108i_was_produced_by\nw=1.0"]
+n3 -> n4[color="brown",fontcolor="black",label="P43_has_dimension\nw=1.0"]
+n3 -> n5[color="brown",fontcolor="black",label="P2_has_type\nw=1.0"]
+n3 -> n6[color="brown",fontcolor="black",label="P45_consists_of\nw=1.0"]
+n6 -> n7[color="brown",fontcolor="black",label="P3_has_note\nw=1.0"]
+n2 -> n8[color="brown",fontcolor="black",label="P82b_end_of_the_end\nw=1.0"]
+n2 -> n9[color="brown",fontcolor="black",label="P82a_begin_of_the_begin\nw=1.0"]
+n5 -> n10[color="brown",fontcolor="black",label="label\nw=1.0"]
+n3 -> n11[color="brown",fontcolor="black",label="classLink\nw=1.0"]
+n2 -> n12[color="brown",fontcolor="black",label="label\nw=1.0"]
+n2 -> n13[color="brown",fontcolor="black",label="classLink\nw=1.0"]
+n4 -> n14[color="brown",fontcolor="black",label="P3_has_note\nw=1.0"]
+n6 -> n15[color="brown",fontcolor="black",label="classLink\nw=1.0"]
+n4 -> n16[color="brown",fontcolor="black",label="classLink\nw=1.0"]
+n5 -> n17[color="brown",fontcolor="black",label="classLink\nw=1.0"]
+n1 -> n18[color="brown",fontcolor="black",label="classLink\nw=1.0"]
 }
