@@ -1,0 +1,4 @@
+write.lock
+karma/models-autosave/*
+karma/user-uploaded-files/*
+karma/user-preferences/*
