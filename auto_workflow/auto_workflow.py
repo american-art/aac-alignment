@@ -14,6 +14,7 @@ import workflow_config
 import urlparse, urllib
 import shutil
 import time
+import zipfile
 
 logging.basicConfig(
 	level = workflow_config.LOG_LEVEL,
@@ -39,10 +40,12 @@ def init_repo_config(config):
         config['input_file_type'] = 'csv'
     if 'output_dir' not in config:
         config['output_dir'] = 'output'
+    if 'output_file_name' not in config:
+        config['output_file_name'] = name
     if 'output_file_type' not in config:
         config['output_file_type'] = 'n3'
     if 'model_file' not in config:
-        config['model_file'] = name + '.ttl'
+        config['model_file'] = name + '-model.ttl'
     if 'num_partitions' not in config:
         config['num_partitions'] = 100
     if 'additional_settings' not in config:
@@ -60,6 +63,7 @@ def init_repo_config(config):
     abs_path = os.path.join(abs_path, config['name'])
     config['input_file'] = os.path.join(abs_path, config['input_file'])
     config['output_dir'] = os.path.join(abs_path, config['output_dir'])
+    config['output_file'] = os.path.join(abs_path, config['output_file_name'] + '.' + config['output_file_type'])
     config['model_file'] = os.path.join(abs_path, config['model_file'])
 
     # model file to uri
@@ -71,6 +75,26 @@ def init_repo_config(config):
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
         time.sleep(1)
+
+def concatenate_output(output_file, output_dir):
+    success_file = os.path.join(output_dir, '_SUCCESS')
+    if not os.path.exists(success_file):
+        logging.error('no _SUCCESS file in ' + output_dir)
+        return
+
+    with open(output_file, 'w') as outfile:
+        for name in os.listdir(output_dir):
+            file = os.path.join(output_dir, name)
+            if os.path.isfile(file) and name.startswith('part-'):
+                with open(file) as infile:
+                    for line in infile:
+                        outfile.write(line)
+
+def zip_file(file, delete_after_zip = False):
+    with zipfile.ZipFile(file + '.zip', 'w', zipfile.ZIP_DEFLATED) as zip:
+        zip.write(file, os.path.basename(file))
+    if delete_after_zip:
+        os.remove(file)
 
 if __name__ == '__main__':
 
@@ -85,12 +109,12 @@ if __name__ == '__main__':
         file_util = FileUtil(sc)
         workflow = Workflow(sc)
 
-        #1. Read the input
+        # Read the input
         if config['input_file_type'] == 'csv':
             logging.info('read input file: ' + config['input_file'])
             input_rdd = workflow.batch_read_csv(config['input_file'])
 
-        #2. Apply the karma Model
+        # Apply the karma Model
         logging.info('apply karma model')
         output_rdd = workflow.run_karma(
             input_rdd,
@@ -103,6 +127,10 @@ if __name__ == '__main__':
             additional_settings = config['additional_settings']
         )
 
-        #3. Save the output
+        # Save the output
         # output_rdd.values().saveAsTextFile(config['output_file'])
         output_rdd.values().distinct().saveAsTextFile(config['output_dir'])
+
+        # concatenate to a single file and zip it
+        concatenate_output(config['output_file'], config['output_dir'])
+        zip_file(config['output_file'], True)
