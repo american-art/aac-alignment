@@ -1,0 +1,85 @@
+#!/usr/bin/env python
+
+import logging
+
+LOG_LEVEL = logging.INFO
+ZIP_OUTPUT = True
+
+autry_repo_path = './../../'
+# autry_base_uri = 'http://americanartcollaborative.org/autry/'
+autry_base_uri = 'http://localhost:8080/american-art/autry/'
+REPO_CONFIG = [
+    # {
+    #     'path': './../../',
+    #     'repo': 'autry',
+    #     'name': 'AutryMakers',
+    #     'input_file': 'AutryMakers.csv', # optional
+    #     'input_file_type': 'csv', # optional
+    #     'output_dir': 'output', # optional
+    #     'output_file_name': 'n3', # optional
+    #     'output_file_type': 'n3', # optional
+    #     # 'model_uri': '', # model_uri or model_file
+    #     'model_file': 'AutryMakers.ttl',
+    #     'base_uri': 'http://americanartcollaborative.org/autry/',
+    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+    #     'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json',
+    #     'num_partitions': 3, # optional
+    #     'additional_settings': {}, # optional
+    # },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryCultureMade',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryDated',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryMakers',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryMedia',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryObjects',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryPubDesc',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    },
+    {
+        'path': autry_repo_path,
+        'repo': 'autry',
+        'name': 'AutryPublications',
+        'base_uri': autry_base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
+    }
+]
