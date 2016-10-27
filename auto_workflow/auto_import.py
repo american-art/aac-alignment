@@ -21,7 +21,7 @@ logging.basicConfig(
 )
 
 def import_data(data, graph = 'default'):
-    url = '%s/%s?graph=%s' % (FUSEKI_URL, TDB_DATASET_NAME, graph)
+    url = '%s/%s/data?graph=%s' % (FUSEKI_URL, TDB_DATASET_NAME, graph)
     files = {
         'file': ('file.n3', data, 'application/octet-stream')
     }
@@ -31,6 +31,8 @@ def import_data(data, graph = 'default'):
         headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
     try:
         resp = req.post(url = url, files = files, headers = headers, timeout = NETWORK_TIMEOUT)
+        if resp.status_code != 200:
+            logging.error(resp.content)
     except Exception as e:
         logging.error(e)
 

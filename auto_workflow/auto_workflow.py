@@ -58,7 +58,6 @@ def init_repo_config(config):
 
     # construct path
     abs_path = os.path.abspath(config['path'])
-    abs_path = os.path.join(abs_path, config['repo'])
     abs_path = os.path.join(abs_path, config['name'])
     config['input_file'] = os.path.join(abs_path, config['input_file'])
     config['output_dir'] = os.path.join(abs_path, config['output_dir'])
