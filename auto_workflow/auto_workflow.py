@@ -46,7 +46,7 @@ def init_repo_config(config):
     if 'model_file' not in config:
         config['model_file'] = name + '-model.ttl'
     if 'num_partitions' not in config:
-        config['num_partitions'] = 100
+        config['num_partitions'] = 1
     if 'additional_settings' not in config:
         config['additional_settings'] = {}
 
@@ -132,6 +132,6 @@ if __name__ == '__main__':
         # output_rdd.values().saveAsTextFile(config['output_file'])
         output_rdd.values().distinct().saveAsTextFile(config['output_dir'])
 
-        # concatenate to a single file and zip it
+        # # concatenate to a single file and zip it
         concatenate_output(config['output_file'], config['output_dir'])
         zip_file(config['output_file'], True)
