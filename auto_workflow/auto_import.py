@@ -39,9 +39,9 @@ def import_data(data, graph = 'default'):
 def drop_graph(graph):
     url = '%s/%s/update' % (FUSEKI_URL, TDB_DATASET_NAME)
     data = {}
-    data['update'] = 'drop graph<%s/%s/%s>' % (FUSEKI_URL, TDB_DATASET_NAME, graph)
+    data['update'] = 'drop graph<%s%s>' % (GRAPH_BASE_URL, graph)
 
-    logging.info('drop graph: ' + graph)
+    logging.info('drop graph: ' + GRAPH_BASE_URL + graph)
     headers = {}
     if FUSEKI_ACCOUNT != None:
         headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
@@ -69,7 +69,7 @@ if __name__ == '__main__':
         abs_path = os.path.abspath(DIR_PATH)
         abs_path = os.path.join(abs_path, repo)
 
-        drop_graph(GRAPH_BASE_URL + repo)
+        drop_graph(repo)
         for name in os.listdir(abs_path):
             # ignore IGNORE_DIRS and non-dir files
             curr_dir = os.path.join(abs_path, name)
