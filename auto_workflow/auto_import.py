@@ -20,6 +20,11 @@ logging.basicConfig(
     datefmt = '%d %b %Y %H:%M:%S'
 )
 
+def http_error_format(resp):
+    return 'status_code: ' + str(resp.status_code) + \
+           '\n headers: ' + str(resp.headers) + \
+           '\n content: ' + resp.content
+
 def import_data(data, graph = 'default'):
     url = '%s/%s/data?graph=%s' % (FUSEKI_URL, TDB_DATASET_NAME, graph)
     files = {
@@ -31,8 +36,8 @@ def import_data(data, graph = 'default'):
         headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
     try:
         resp = req.post(url = url, files = files, headers = headers, timeout = NETWORK_TIMEOUT)
-        if resp.status_code != 200:
-            logging.error(resp.content)
+        if resp.status_code // 100 != 2:
+            logging.error(http_error_format(resp))
     except Exception as e:
         logging.error(e)
 
@@ -47,7 +52,7 @@ def drop_graph(graph):
         headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
     try:
         resp = req.post(url = url, data = data, headers = headers, timeout = NETWORK_TIMEOUT)
-        if resp.status_code != 200:
+        if resp.status_code // 100 != 2:
             logging.error('drop graph: [%d]' % resp.status_code)
             return
     except Exception as e:
