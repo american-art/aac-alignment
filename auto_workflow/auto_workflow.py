@@ -17,6 +17,7 @@ from importlib import import_module
 # import workflow_config
 
 logging.basicConfig(
+    stream = sys.stdout,
 	format = '%(asctime)s [%(levelname)s] %(message)s',
 	datefmt = '%d %b %Y %H:%M:%S'
 )
