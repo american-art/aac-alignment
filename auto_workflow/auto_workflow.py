@@ -104,18 +104,29 @@ if __name__ == '__main__':
     sc = SparkContext(appName = 'Auto AAC Workflow')
     java_import(sc._jvm, 'edu.isi.karma')
 
+    file_util = FileUtil(sc)
+    workflow = Workflow(sc)
+
+    logging.info('Number of model: %d' % len(config_module.REPO_CONFIG))
     for config in config_module.REPO_CONFIG:
         init_repo_config(config)
 
-        file_util = FileUtil(sc)
-        workflow = Workflow(sc)
-
         # Read the input
+        logging.info('read input file: ' + config['input_file'])
         if config['input_file_type'] == 'csv':
-            logging.info('read input file: ' + config['input_file'])
             input_rdd = workflow.batch_read_csv(config['input_file'])
+        elif config['input_file_type'] == 'json':
+            # input_rdd = workflow.read_json_file(config['input_file'])
+            # input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
+            print "Load file:", config['input_file']
+            #input_rdd = file_util.load_file(config['input_file'], file_format = 'text', data_type = 'json')
+            input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
+        elif config['input_file_type'] == 'xml':
+            input_rdd = sc.wholeTextFiles(config['input_file'])
 
         # Apply the karma Model
+        print 'DEBUG ' + config['input_file_type']
+        print config['additional_settings']
         logging.info('apply karma model')
         output_rdd = workflow.run_karma(
             input_rdd,
