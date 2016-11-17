@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} - Auto Update</title>
+    <style type="text/css">
+        pre {
+            display: block;
+            font-family: monospace;
+            white-space: pre;
+            margin: 1em 0;
+            background-color: #eee;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }} - Auto Update</h1>
+    <div>
+        <input type="button" id="btn-config" value="Configuration file"/>
+        <input type="button" id="btn-run" value="Run"/>
+    </div>
+    <pre id="config">{{ config_file }}</pre>
+    <pre id="log"></pre>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        var socket = io.connect('http://127.0.0.1:5000');
+        socket.on('output', function(msg) {
+            $('#log').append(msg.data + '\n');
+        });
+        socket.on('start', function(msg) {
+            $('#log').empty().show();
+            $('#btn-run').prop('disabled', true);
+        });
+        socket.on('end', function(msg) {
+            $('#btn-run').prop('disabled', false);
+        });
+        $('pre#config').hide();
+        $('pre#log').hide();
+
+
+        $('#btn-config').click(function(){
+            $('pre#config').toggle();
+        });
+        $('#btn-run').click(function(){
+            socket.emit('update', {repo: '{{repo}}'});
+        });
+    });
+    </script>
+</body>
+</html>

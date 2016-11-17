@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auto Update Interface for AAC Alignment - American Art Collaborative</title>
+</head>
+<body>
+    <h1>Auto Update Interface for AAC Alignment</h1>
+    <hr>
+    <ul>
+    {% for item in repos %}
+        <li><a href="{{ item }}">{{ item }}</a></li>
+    {% endfor %}
+    </ul>
+    <ol>
+        <li>Please use the newest <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API#Browser_compatibility" target="_blank">browser</a> which supports web socket.</li>
+        <li>Check corresponding configuration file before invoking interface.</li>
+        <li>Only one executing instance is allowed for one museum (others will be blocked).</li>
+        <li>There are totally 3 steps: Github repo synchronization, applying Karma model, triple store import.</li>
+        <li>Please do not close browser until finish or you will never know the result of this invocation.</li>
+        <li>If there's some format problem in model, it will cause error in the 3rd step.</li>
+        <li>New generated data will not upload to Github automatically.</li>
+        <li>Notify me on Slack: 1) push new generated data to Github 2) update configuration file.</li>
+    </ol>
+</body>
+</html>

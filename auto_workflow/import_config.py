@@ -5,6 +5,9 @@ DIR_PATH = './../../aac-repos/'
 REPOS = [
 	# 'autry',
 	'npg',
+	'cbm',
+	'wam',
+	'nmwa',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'
@@ -12,6 +15,7 @@ OUTPUT_DIR = 'output'
 # tdb should set `tdb:unionDefaultGraph true`
 FUSEKI_URL = 'http://localhost:3030'
 GRAPH_BASE_URL = 'http://data.americanartcollaborative.org/'
+# GRAPH_BASE_URL = 'http://data.aac.org/'
 # FUSEKI_ACCOUNT = ('', '')
 TDB_DATASET_NAME = 'american-art'
 FUSEKI_ACCOUNT = None
