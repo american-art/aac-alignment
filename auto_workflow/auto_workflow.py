@@ -126,8 +126,6 @@ if __name__ == '__main__':
             input_rdd = sc.wholeTextFiles(config['input_file'])
 
         # Apply the karma Model
-        print 'DEBUG ' + config['input_file_type']
-        print config['additional_settings']
         logging.info('apply karma model')
         output_rdd = workflow.run_karma(
             input_rdd,

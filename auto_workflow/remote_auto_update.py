@@ -40,6 +40,10 @@ def repo(repo_name = None):
         config_file = config_file
     )
 
+@socketio.on('disconnect')
+def handle_disconnect():
+    pass
+
 @socketio.on('update')
 def handle_message(msg):
 
