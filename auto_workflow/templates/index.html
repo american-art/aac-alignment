@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Auto Update Interface for AAC Alignment - American Art Collaborative</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block body %}
     <h1>Auto Update Interface for AAC Alignment</h1>
+    <div><a href="/logout">logout</a></div>
     <hr>
     <ul>
     {% for item in repos %}
@@ -19,7 +17,8 @@
         <li>Please do not close browser until finish or you will never know the result of this invocation.</li>
         <li>If there's some format problem in model, it will cause error in the 3rd step.</li>
         <li>New generated data will not upload to Github automatically.</li>
+        <li>After successfully import data, you could use SPARQL to query it. Query endpoint <code>http://data.americanartcollaborative.org/sparql</code>. <a href="http://yasgui.org/">YASGUI</a> can be used as query editor.</li>
         <li>Notify me on Slack: 1) push new generated data to Github 2) update configuration file.</li>
     </ol>
-</body>
-</html>
+
+{% endblock %}

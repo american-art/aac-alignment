@@ -17,8 +17,9 @@ if [ ! -d $REPO_PATH ]; then
 fi
 cd $REPO_PATH
 git status
-#git checkout -- .
-#git pull
+git checkout -- .
+git pull
+git clean -fd
 cd $CURR_PATH
 
 # applay karma model
@@ -29,7 +30,10 @@ if [ ! -f "${CONFIG_FILE}.py" ]; then
     echo "Repo configuration file doesn't exist"
     exit
 fi
+# local version
 spark-submit --archives ~/ISI/aac-dependencies/karma.zip --py-files ~/ISI/aac-dependencies/python-lib.zip --driver-class-path ~/ISI/softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE
+# server version
+# /opt/aac-softwares/spark-1.5.0-cdh5.5.0/bin/spark-submit --archives /opt/aac-dependencies/karma.zip --py-files /opt/aac-dependencies/python-lib.zip --driver-class-path /opt/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE
 
 # import into triple store
 echo -e "\n----------"
