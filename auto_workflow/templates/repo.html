@@ -4,7 +4,8 @@
     <h1>{{ title }} - Auto Update</h1>
     <div>
         <input type="button" id="btn-config" value="Configuration file"/>
-        <input type="button" id="btn-run" value="Run"/>
+        <input type="button" id="btn-run-dev" value="Dev Run"/>
+        <input type="button" id="btn-run-pro" value="Pro Run"/>
     </div>
     <pre id="config">{{ config_file }}</pre>
     <pre id="log"></pre>
@@ -13,25 +14,33 @@
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function(){
         var socket = io.connect('http://{{ socket.0 }}:{{ socket.1 }}');
-        socket.on('output', function(msg) {
-            $('#log').append(msg.data + '\n');
-        });
-        socket.on('start', function(msg) {
-            $('#log').empty().show();
-            $('#btn-run').prop('disabled', true);
-        });
-        socket.on('end', function(msg) {
-            $('#btn-run').prop('disabled', false);
-        });
         $('pre#config').hide();
         $('pre#log').hide();
-
-
         $('#btn-config').click(function(){
             $('pre#config').toggle();
         });
-        $('#btn-run').click(function(){
-            socket.emit('update', {repo: '{{repo}}'});
+
+        // ouput event
+        socket.on('output', function(msg) {
+            $('#log').append(msg.data + '\n');
+        });
+        // start event
+        socket.on('start', function(msg) {
+            $('#log').empty().show();
+            $('#btn-run-dev').prop('disabled', true);
+            $('#btn-run-pro').prop('disabled', true);
+        });
+        // end event
+        socket.on('end', function(msg) {
+            $('#btn-run-dev').prop('disabled', false);
+            $('#btn-run-pro').prop('disabled', false);
+        });
+        // emit update event
+        $('#btn-run-dev').click(function(){
+            socket.emit('update', {version: 'dev', repo: '{{repo}}'});
+        });
+        $('#btn-run-pro').click(function(){
+            socket.emit('update', {version: 'pro', repo: '{{repo}}'});
         });
     });
     </script>
