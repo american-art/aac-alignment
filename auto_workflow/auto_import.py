@@ -26,8 +26,8 @@ def http_error_format(resp):
            '\n headers: ' + str(resp.headers) + \
            '\n content: ' + resp.content
 
-def import_data(data, graph = 'default'):
-    url = '%s/%s/data?graph=%s' % (FUSEKI_URL, TDB_DATASET_NAME, graph)
+def import_data(data, dataset, graph = 'default'):
+    url = '%s/%s/data?graph=%s' % (FUSEKI_URL, dataset, graph)
     files = {
         'file': ('file.n3', data, 'application/octet-stream')
     }
@@ -42,8 +42,8 @@ def import_data(data, graph = 'default'):
     except Exception as e:
         logging.error(e)
 
-def drop_graph(graph):
-    url = '%s/%s/update' % (FUSEKI_URL, TDB_DATASET_NAME)
+def drop_graph(dataset, graph):
+    url = '%s/%s/update' % (FUSEKI_URL, dataset)
     data = {}
     data['update'] = 'drop graph<%s%s>' % (GRAPH_BASE_URL, graph)
 
@@ -69,17 +69,21 @@ def zip_extract(zip_file, output):
 
 if __name__ == '__main__':
 
+    # python auto_import.py [repo_name] [dev|product]
+
     repo = sys.argv[1]
+    dataset = TDB_DATASET_NAME if sys.argv[2] == 'pro' else TDB_DEV_DATASET_NAME
     if repo not in REPOS:
         logging.error('invalid museum')
         sys.exit()
 
+    logging.info('Dataset: ' + dataset)
     logging.info('Start to process repo: ' + repo)
 
     abs_path = os.path.abspath(DIR_PATH)
     abs_path = os.path.join(abs_path, repo)
 
-    drop_graph(repo)
+    drop_graph(dataset, repo)
     for name in os.listdir(abs_path):
         # ignore IGNORE_DIRS and non-dir files
         curr_dir = os.path.join(abs_path, name)
@@ -101,7 +105,7 @@ if __name__ == '__main__':
                         data = f.read()
                         f.close()
                         logging.info('import data piece: ' + name)
-                        import_data(data, GRAPH_BASE_URL + repo)
+                        import_data(data, dataset, GRAPH_BASE_URL + repo)
 
 
 

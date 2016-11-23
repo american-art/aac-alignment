@@ -96,6 +96,7 @@ def repo(repo_name = None):
 
 @socketio.on('connect')
 def connect_handler():
+    # current_user will return as anonymous user if the cookie is cross-domain
     if not current_user.is_authenticated:
         return False  # not allowed here
 
@@ -103,6 +104,7 @@ def connect_handler():
 def disconnect_handler():
     pass
 
+# authentication in socketio
 def authenticated_only(f):
     @functools.wraps(f)
     def wrapped(*args, **kwargs):
@@ -115,19 +117,26 @@ def authenticated_only(f):
     return wrapped
 
 @socketio.on('update')
-# @authenticated_only
-def handle_message(msg):
+@authenticated_only
+def update_dev_handler(msg):
 
     emit('start')
     socketio.sleep(0.1)
 
     repo = msg['repo']
     if repo not in REPOS:
+        emit('output', {'data': 'no such repo'})
         emit('end')
         return
 
-    x = open('lock/' + repo, 'w+')
+    version = msg['version']
+    command = ''
+    if version == 'pro':
+        command = './remote_auto_update_pro.sh %s' % repo
+    else:
+        command = './remote_auto_update_dev.sh %s' % repo
 
+    x = open('lock/' + repo, 'w+')
     try:
         # lock
         fcntl.flock(x, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -136,11 +145,11 @@ def handle_message(msg):
         process = subprocess.Popen(
             # ["python", "-u", "test.py"], # -u turns off stdout buff for python
             # make sure all python outputs (like logging) all points to stdout
-            './remote_auto_update.sh %s' % repo,
+            command,
             stdout = subprocess.PIPE,
             stderr = subprocess.PIPE,
             shell = True, # set true to do it in shell (spark only works in this mode)
-            bufsize = 1
+            # bufsize = 1
         )
 
         for line in iter(process.stdout.readline, b''):
