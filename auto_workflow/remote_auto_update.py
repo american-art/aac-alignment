@@ -4,7 +4,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, disconnect
 from flask import request, redirect, url_for
 from flask_login import current_user, LoginManager, UserMixin, login_required, login_user, logout_user
-from flask_crossdomain import crossdomain
+from flask_cors import CORS
 
 import time
 import sys
@@ -18,6 +18,7 @@ from config import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = FLASK_SECRET_KEY
+cors = CORS(app, resources = {r'/*': {'origins': '*'}})
 socketio = SocketIO(app, asyc_mode = 'eventlet')
 
 login_manager = LoginManager()
@@ -90,18 +91,16 @@ def repo(repo_name = None):
         title = repo_name.upper(),
         repo = repo_name,
         config_file = config_file,
-        socket = WEB_SOCKET
+        socket_port = WEB_SOCKET_PORT
     )
 
 @socketio.on('connect')
-@crossdomain(origin = '*')
 def connect_handler():
     # current_user will return as anonymous user if the cookie is cross-domain
     if not current_user.is_authenticated:
         return False  # not allowed here
 
 @socketio.on('disconnect')
-@crossdomain(origin = '*')
 def disconnect_handler():
     pass
 
@@ -109,7 +108,6 @@ def disconnect_handler():
 def authenticated_only(f):
     @functools.wraps(f)
     def wrapped(*args, **kwargs):
-        print current_user.is_authenticated
         if not current_user.is_authenticated:
             disconnect()
         else:
@@ -118,7 +116,6 @@ def authenticated_only(f):
     return wrapped
 
 @socketio.on('update')
-@crossdomain(origin = '*')
 @authenticated_only
 def update_dev_handler(msg):
 
@@ -180,4 +177,4 @@ def update_dev_handler(msg):
 
 if __name__ == '__main__':
     # app.run(host = '127.0.0.1', port = 5000, debug = True)
-    socketio.run(app, host = '0.0.0.0', port = WEB_SOCKET[1], debug = False)
+    socketio.run(app, host = '0.0.0.0', port = WEB_SOCKET_PORT, debug = False)

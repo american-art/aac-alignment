@@ -28,4 +28,4 @@ FLASK_SECRET_KEY = 'secret!'
 REMOTE_UPDATE_USERS = {
     'admin': '123', # username (same as session token), password
 }
-WEB_SOCKET = ('aac.org', 5000)
+WEB_SOCKET_PORT = 5000
