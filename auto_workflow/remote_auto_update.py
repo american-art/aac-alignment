@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit, disconnect
-from flask import request, redirect, url_for
 from flask_login import current_user, LoginManager, UserMixin, login_required, login_user, logout_user
 from flask_cors import CORS
 
-import time
 import sys
 import subprocess
 import fcntl
@@ -25,16 +23,6 @@ login_manager = LoginManager()
 login_manager.login_view = 'login'
 login_manager.session_protection = None
 login_manager.init_app(app)
-
-# host should be same in socket front and back end,
-# or there will be a cross domain issue
-
-REPOS = set([
-    'npg',
-    'cbm',
-    'wam',
-    'nmwa',
-])
 
 USERS = REMOTE_UPDATE_USERS
 
@@ -176,5 +164,4 @@ def update_dev_handler(msg):
 
 
 if __name__ == '__main__':
-    # app.run(host = '127.0.0.1', port = 5000, debug = True)
     socketio.run(app, host = '0.0.0.0', port = WEB_SOCKET_PORT, debug = False)

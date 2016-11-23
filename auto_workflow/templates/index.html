@@ -13,12 +13,36 @@
         <li>Please use the newest <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API#Browser_compatibility" target="_blank">browser</a> which supports web socket.</li>
         <li>Check corresponding configuration file before invoking interface.</li>
         <li>Only one executing instance is allowed for one museum (others will be blocked).</li>
-        <li>There are totally 3 steps: Github repo synchronization, applying Karma model, triple store import.</li>
         <li>Please do not close browser until finish or you will never know the result of this invocation.</li>
-        <li>If there's some format problem in model, it will cause error in the 3rd step.</li>
+        <li>There are two operations: generate & import [dev]elopment version data and [pro]duction data. The generated data will be imported to different triple store dataset corresponding to their version.</li>
+        <li>3 steps in [dev]: Github repo synchronization, applying Karma model, triple store import.</li>
+        <li>If the configuration file is not suitable, it will cause error in the 2rd step of [dev].</li>
+        <li>If there's some format problem in model, it will cause error in the 3rd step of [dev].</li>
+        <li>Data of [dev] will not show in Pubby for Pubby does not connect with this query endpoint.</li>
+        <li>After successfully import data, you could use SPARQL to query it.<br>
+            Query endpoint <code>http://data.americanartcollaborative.org/sparql_dev</code>.<br>
+            <a href="http://yasgui.org/">YASGUI</a> can be used as query editor.<br>
+            <code><pre>
+# Example: query triples in graph wam
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX crm: &lt;http://www.cidoc-crm.org/cidoc-crm/&gt;
+
+SELECT distinct ?subject ?predicate ?object
+WHERE {
+    graph &lt;http://data.americanartcollaborative.org/wam&gt; {
+        ?subject ?predicate ?object.
+    }
+}
+OFFSET 1000
+LIMIT 50</pre></code></li>
+        <li>Museum may have their own URI prefix, but the name of graph is unified: <code>http://data.americanartcollaborative.org/[REPO_NAME]</code>.</li>
+        <li>Only one step in [pro] currently. If you get the correct data in [dev], invoke [pro] operation to import these data into production triple store.</li>
+        <li>[pro] data query endpoint <code>http://data.americanartcollaborative.org/sparql</code></li>
         <li>New generated data will not upload to Github automatically.</li>
-        <li>After successfully import data, you could use SPARQL to query it. Query endpoint <code>http://data.americanartcollaborative.org/sparql</code>. <a href="http://yasgui.org/">YASGUI</a> can be used as query editor.</li>
-        <li>Test data will not show in Pubby for it does not connect with this query endpoint.</li>
         <li>Notify me on Slack: 1) push new generated data to Github 2) update configuration file.</li>
     </ol>
 
