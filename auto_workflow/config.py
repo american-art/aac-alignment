@@ -3,11 +3,11 @@ import logging
 
 DIR_PATH = './../../aac-repos/'
 REPOS = [
-	# 'autry',
-	'npg',
-	'cbm',
-	'wam',
-	'nmwa',
+    # 'autry',
+    'npg',
+    'cbm',
+    'wam',
+    'nmwa',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'
@@ -23,3 +23,9 @@ FUSEKI_ACCOUNT = None
 FUSEKI_FORCE_OVERWRITE = True # delete the data store which has the same name before import
 LOG_LEVEL = logging.INFO
 NETWORK_TIMEOUT = None
+
+FLASK_SECRET_KEY = 'secret!'
+REMOTE_UPDATE_USERS = {
+    'admin': '123', # username (same as session token), password
+}
+WEB_SOCKET = ('aac.org', 5000)

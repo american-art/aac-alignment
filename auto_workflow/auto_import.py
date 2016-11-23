@@ -8,7 +8,7 @@ import colorer
 import zipfile
 
 # config
-from import_config import *
+from config import *
 
 # global variables
 req = requests.session()

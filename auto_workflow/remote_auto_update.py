@@ -4,6 +4,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, disconnect
 from flask import request, redirect, url_for
 from flask_login import current_user, LoginManager, UserMixin, login_required, login_user, logout_user
+from flask_crossdomain import crossdomain
 
 import time
 import sys
@@ -12,9 +13,12 @@ import fcntl
 import errno
 import functools
 
+# config
+from config import *
+
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, asyc_mode = 'greenlet') #  asyc_mode = 'eventlet'
+app.config['SECRET_KEY'] = FLASK_SECRET_KEY
+socketio = SocketIO(app, asyc_mode = 'eventlet')
 
 login_manager = LoginManager()
 login_manager.login_view = 'login'
@@ -23,7 +27,6 @@ login_manager.init_app(app)
 
 # host should be same in socket front and back end,
 # or there will be a cross domain issue
-SOCKET = ('127.0.0.1', 5000)
 
 REPOS = set([
     'npg',
@@ -32,9 +35,7 @@ REPOS = set([
     'nmwa',
 ])
 
-USERS = {
-    'admin': '123', # username (same as session token), password
-}
+USERS = REMOTE_UPDATE_USERS
 
 class User(UserMixin):
 
@@ -78,8 +79,6 @@ def index():
 @app.route('/<repo_name>')
 @login_required
 def repo(repo_name = None):
-
-    print 'repo', current_user
     if repo_name not in REPOS:
         return 'No such repo'
 
@@ -91,16 +90,18 @@ def repo(repo_name = None):
         title = repo_name.upper(),
         repo = repo_name,
         config_file = config_file,
-        socket = SOCKET
+        socket = WEB_SOCKET
     )
 
 @socketio.on('connect')
+@crossdomain(origin = '*')
 def connect_handler():
     # current_user will return as anonymous user if the cookie is cross-domain
     if not current_user.is_authenticated:
         return False  # not allowed here
 
 @socketio.on('disconnect')
+@crossdomain(origin = '*')
 def disconnect_handler():
     pass
 
@@ -117,6 +118,7 @@ def authenticated_only(f):
     return wrapped
 
 @socketio.on('update')
+@crossdomain(origin = '*')
 @authenticated_only
 def update_dev_handler(msg):
 
@@ -155,7 +157,7 @@ def update_dev_handler(msg):
         for line in iter(process.stdout.readline, b''):
             emit('output', {'data' : line})
             socketio.sleep(0.1)
-            print line,
+            # print line,
         process.stdout.close()
         process.wait()
 
@@ -178,4 +180,4 @@ def update_dev_handler(msg):
 
 if __name__ == '__main__':
     # app.run(host = '127.0.0.1', port = 5000, debug = True)
-    socketio.run(app, host = SOCKET[0], port = SOCKET[1], debug = False)
+    socketio.run(app, host = '0.0.0.0', port = WEB_SOCKET[1], debug = False)
