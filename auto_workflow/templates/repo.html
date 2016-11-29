@@ -40,7 +40,9 @@
             socket.emit('update', {version: 'dev', repo: '{{repo}}'});
         });
         $('#btn-run-pro').click(function(){
-            socket.emit('update', {version: 'pro', repo: '{{repo}}'});
+            if(confirm('Sure?')){
+                socket.emit('update', {version: 'pro', repo: '{{repo}}'});
+            }
         });
     });
     </script>
