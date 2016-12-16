@@ -3,11 +3,13 @@ import logging
 
 DIR_PATH = './../../aac-repos/'
 REPOS = [
-    # 'autry',
+    'autry',
     'npg',
     'cbm',
     'wam',
     'nmwa',
+    'ccma',
+    'ima',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'

@@ -18,8 +18,8 @@ fi
 cd $REPO_PATH
 git status
 #git checkout -- .
-#git pull
 #git clean -fd
+#git pull
 cd $CURR_PATH
 
 # applay karma model

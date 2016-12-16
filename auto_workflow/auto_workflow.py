@@ -118,10 +118,10 @@ if __name__ == '__main__':
             input_rdd = workflow.batch_read_csv(config['input_file'])
         elif config['input_file_type'] == 'json':
             # input_rdd = workflow.read_json_file(config['input_file'])
-            # input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
-            print "Load file:", config['input_file']
+            input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
+            # print "Load file:", config['input_file']
             #input_rdd = file_util.load_file(config['input_file'], file_format = 'text', data_type = 'json')
-            input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
+            # input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
         elif config['input_file_type'] == 'xml':
             input_rdd = sc.wholeTextFiles(config['input_file'])
 
