@@ -9,6 +9,7 @@ fi
 
 # push generated data into github
 # make sure there's no other update in master branch, or there will be a merge issue
+# the github account is american-art-admin, you need to set up ssh key first.
 echo "----------"
 echo "1. Push generated data to Github"
 REPO_PATH="../../aac-repos/$1"
@@ -17,7 +18,7 @@ if [ ! -d $REPO_PATH ]; then
     exit
 fi
 cd $REPO_PATH
-git american-art-admin push
+git push
 cd $CURR_PATH
 
 # import into triple store
