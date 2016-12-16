@@ -69,7 +69,7 @@ def zip_extract(zip_file, output):
 
 if __name__ == '__main__':
 
-    # python auto_import.py [repo_name] [dev|product]
+    # python auto_import.py [repo_name] [dev|pro]
 
     repo = sys.argv[1]
     dataset = TDB_DATASET_NAME if sys.argv[2] == 'pro' else TDB_DEV_DATASET_NAME
