@@ -18,6 +18,8 @@ if [ ! -d $REPO_PATH ]; then
     exit
 fi
 cd $REPO_PATH
+git add .
+git commit -m "generate data"
 git push
 cd $CURR_PATH
 
