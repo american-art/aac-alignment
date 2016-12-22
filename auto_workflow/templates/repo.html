@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>{{ title }} - Auto Update</h1>
+    <div>
+        <input type="button" id="btn-config" value="Configuration file"/>
+        <input type="button" id="btn-run-dev" value="Dev Run"/>
+        <input type="button" id="btn-run-pro" value="Pro Run"/>
+    </div>
+    <pre id="config">{{ config_file }}</pre>
+    <pre id="log"></pre>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        var socket = io.connect('http://' + location.hostname + ':{{ socket_port }}');
+        $('pre#config').hide();
+        $('pre#log').hide();
+        $('#btn-config').click(function(){
+            $('pre#config').toggle();
+        });
+
+        // ouput event
+        socket.on('output', function(msg) {
+            $('#log').append(msg.data + '\n');
+        });
+        // start event
+        socket.on('start', function(msg) {
+            $('#log').empty().show();
+            $('#btn-run-dev').prop('disabled', true);
+            $('#btn-run-pro').prop('disabled', true);
+        });
+        // end event
+        socket.on('end', function(msg) {
+            $('#btn-run-dev').prop('disabled', false);
+            $('#btn-run-pro').prop('disabled', false);
+        });
+        // emit update event
+        $('#btn-run-dev').click(function(){
+            socket.emit('update', {version: 'dev', repo: '{{repo}}'});
+        });
+        $('#btn-run-pro').click(function(){
+            if(confirm('Sure?')){
+                socket.emit('update', {version: 'pro', repo: '{{repo}}'});
+            }
+        });
+    });
+    </script>
+{% endblock %}
