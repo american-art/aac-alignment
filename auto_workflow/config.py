@@ -9,7 +9,9 @@ REPOS = [
     'wam',
     'nmwa',
     'ccma',
+    'GM',
     'ima',
+    'acm',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'
