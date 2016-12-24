@@ -24,7 +24,7 @@ REPO_PATH=$AAC_ROOT/aac-repos/$1
 if [ ! -d $REPO_PATH ]; then
     echo "Repo doesn't exist. Nothing to push... settling with git clone"
     cd $AAC_ROOT/aac-repos
-	git clone https://github.com/american-art/${1}.git
+	git clone git@github.com:american-art/$1.git
 else
 	echo "Repo already exists. Doing git push..."
 	cd $REPO_PATH

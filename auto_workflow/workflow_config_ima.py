@@ -21,15 +21,15 @@ REPO_CONFIG = [
         'input_file_type': 'json',
         'output_file_name': 'aac-actors'
     },
-    {
-        'path': repo_path,
-        'name': 'aac-objects',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'aac-objects-model.ttl',
-        'input_file': 'aac-objects_folded.json',
-        'input_file_type': 'json',
-        'output_file_name': 'aac-objects'
-    },
+    #{
+    #    'path': repo_path,
+    #    'name': 'aac-objects',
+    #    'base_uri': base_uri,
+    #    'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+    #    'context_uri': context_uri,
+    #    'model_file': 'aac-objects-model.ttl',
+    #    'input_file': 'aac-objects_folded.json',
+    #    'input_file_type': 'json',
+    #    'output_file_name': 'aac-objects'
+    #},
 ]

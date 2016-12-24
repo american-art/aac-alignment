@@ -22,15 +22,6 @@ logging.basicConfig(
 	datefmt = '%d %b %Y %H:%M:%S'
 )
 
-'''
-spark-submit \
---archives karma.zip \
---py-files python-lib.zip \
---driver-class-path karma-spark-0.0.1-SNAPSHOT-shaded.jar \
-auto_workflow.py autry_workflow_config
-
-'''
-
 def init_repo_config(config):
     # fill variables
     name = config['name']
