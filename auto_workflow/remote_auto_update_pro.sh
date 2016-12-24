@@ -30,6 +30,7 @@ else
 	cd $REPO_PATH
 	git add .
 	git commit -m "Applied updated model(s)"
+	git remote set-url origin git@github.com:american-art/$1.git
 	git push
 fi
 
