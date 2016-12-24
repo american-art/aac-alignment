@@ -48,7 +48,7 @@ if [ ! -f "${CONFIG_FILE}.py" ]; then
     echo "Repo configuration file doesn't exist"
     exit
 fi
-spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROOT/aac-dependencies/python-lib.zip --driver-class-path $AAC_ROOT/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE
+spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROOT/aac-dependencies/python-lib.zip --driver-class-path $AAC_ROOT/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE --executor-memory 4g --num-executors 1 --executor-cores 1
 
 # import into dev triple store
 echo -e "\n----------"
