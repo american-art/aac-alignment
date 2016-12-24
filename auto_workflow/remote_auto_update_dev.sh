@@ -24,7 +24,7 @@ if [ -z "$ss" ]; then
 fi
 
 # Get latest data.
-echo "----------"
+echo -e "\n----------"
 echo "1. Synchronize data from Github"
 REPO_PATH=$AAC_ROOT/aac-repos/$1
 if [ ! -d $REPO_PATH ]; then
@@ -59,4 +59,5 @@ echo "3. Import into dev triple store (american-art-dev)"
 python auto_import.py "$1" dev
 
 echo -e "\n----------"
+echo "Test your data at http://localhost:3030/american-art-dev/query or http://data.americanartcollaborative.org/sparql_dev"
 echo "DONE!"

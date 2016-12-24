@@ -18,7 +18,7 @@ fi
 # push generated data into github
 # make sure there's no other update in master branch, or there will be a merge issue
 # the github account is american-art-admin, you need to set up ssh key first.
-echo "----------"
+echo -e "\n----------"
 echo "1. Push generated data to Github"
 REPO_PATH=$AAC_ROOT/aac-repos/$1
 if [ ! -d $REPO_PATH ]; then
