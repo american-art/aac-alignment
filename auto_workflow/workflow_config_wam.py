@@ -39,10 +39,10 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_PlaceofBirth-model.ttl',
+        'model_file': 'WAM_AAC_Individual-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_PlaceofBirth'
+        'output_file_name': 'WAM_AAC_Individual'
     },
     {
         'path': repo_path,
@@ -50,10 +50,10 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_PlaceofDeath-model.ttl',
+        'model_file': 'WAM_AAC_Individual_Birth-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_PlaceOfDeath'
+        'output_file_name': 'WAM_AAC_Individual_Birth'
     },
     {
         'path': repo_path,
@@ -61,10 +61,21 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_PlaceofWork-model.ttl',
+        'model_file': 'WAM_AAC_Individual_Death-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_PlaceOfWork'
+        'output_file_name': 'WAM_AAC_Individual_Death'
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Constituents',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Individual_Work-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Individual_Work'
     },
     {
         'path': repo_path,
