@@ -38,22 +38,20 @@ def drop_graph(dataset, graph):
 
 if __name__ == '__main__':
 
-    # python auto_import.py [graph_name] [dev|product]
-
-    graph = sys.argv[1]
-    dataset = TDB_DATASET_NAME if sys.argv[2] == 'pro' else TDB_DEV_DATASET_NAME
-    if graph not in REPOS:
+    # python drop_graph.py [dev|pro] [graph_name] 
+    graph = sys.argv[2]
+    dataset = TDB_DATASET_NAME if sys.argv[1] == 'pro' else TDB_DEV_DATASET_NAME
+    if graph in REPOS:
+        logging.info('Removing Graph '+graph+' from dataset '+dataset)
+        abs_path = os.path.join(os.path.abspath(DIR_PATH), graph)
+        drop_graph(dataset, graph)
+    elif graph == ".":
+        for g in REPOS:
+            logging.info('Removing Graph '+g+' from dataset '+dataset)
+            abs_path = os.path.join(os.path.abspath(DIR_PATH), g)
+            drop_graph(dataset, g)
+    else:
         logging.error('invalid museum')
         sys.exit()
-
-    logging.info('Updating Dataset: ' + dataset)
-    logging.info('Removing Graph: ' + graph)
-
-    abs_path = os.path.abspath(DIR_PATH)
-    abs_path = os.path.join(abs_path, graph)
-
-    drop_graph(dataset, graph)
-
-
 
 
