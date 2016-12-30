@@ -40,6 +40,14 @@ else
 fi
 cd $CURR_PATH
 
+if [ $? -eq 0 ]
+then
+  echo "Successfully synchronized data"
+else
+  echo "Couldn't synchornize data"
+  exit
+fi
+
 # applay karma model
 echo -e "\n----------"
 echo "2. Apply Karma model"
@@ -52,6 +60,14 @@ spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROO
 --executor-memory 2g \
 --num-executors 1 \
 --executor-cores 1
+
+if [ $? -eq 0 ]
+then
+  echo "Successfully applied all models to all the data"
+else
+  echo "Error occired whie applying models"
+  exit
+fi
 
 # import into dev triple store
 echo -e "\n----------"
