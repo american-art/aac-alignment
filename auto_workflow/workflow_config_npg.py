@@ -26,19 +26,9 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
-        'model_file': 'NPGConAltNames2-Institutions-model.ttl',
+        'model_file': 'NPGConAltNames2-model.ttl',
         'input_file': 'NPGConAltNames2.csv',
-        'output_file_name': 'NPGConAltNames2-Institutions'
-    },
-    {
-        'path': repo_path,
-        'name': 'NPGConAltNames',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
-        'context_uri': context_uri,
-        'model_file': 'NPGConAltNames2-People-model.ttl', # different model
-        'input_file': 'NPGConAltNames2.csv',
-        'output_file_name': 'NPGConAltNames2-People'
+        'output_file_name': 'NPGConAltNames2'
     },
     {
         'path': repo_path,
@@ -46,19 +36,9 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
-        'model_file': 'NPGConstituents2-People-model.ttl',
+        'model_file': 'NPGConstituents2-model.ttl',
         'input_file': 'NPGConstituents2.csv',
-        'output_file_name': 'NPGConstituents2-People'
-    },
-    {
-        'path': repo_path,
-        'name': 'NPGConstituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
-        'context_uri': context_uri,
-        'model_file': 'NPGConstituents2-Institutions-model.ttl',
-        'input_file': 'NPGConstituents2.csv',
-        'output_file_name': 'NPGConstituents2-Institutions'
+        'output_file_name': 'NPGConstituents2'
     },
     {
         'path': repo_path,
@@ -72,7 +52,7 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'NPGDimsParsedUpdate2May',
+        'name': 'NPGDimsParsed',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
