@@ -63,9 +63,9 @@ spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROO
 
 if [ $? -eq 0 ]
 then
-  echo "Successfully applied all models to all the data"
+  echo "Successfully applied all models"
 else
-  echo "Error occired whie applying models"
+  echo "Error occured while applying models"
   exit
 fi
 
