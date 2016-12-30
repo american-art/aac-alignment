@@ -37,9 +37,9 @@ cd $CURR_PATH
 
 if [ $? -eq 0 ]
 then
-  echo "Successfully synchronized data"
+  echo "Successfully pushed data"
 else
-  echo "Couldn't synchornize data"
+  echo "Couldn't push data"
   exit
 fi
 
