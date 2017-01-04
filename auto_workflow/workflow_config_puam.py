@@ -8,7 +8,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'puam'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://americanartcollaborative.org/puam/'
+base_uri = 'http://data.americanartcollaborative.org/puam/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
