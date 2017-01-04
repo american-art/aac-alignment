@@ -33,8 +33,15 @@ else
 	git remote set-url origin git@github.com:american-art/$1.git
 	git push
 fi
-
 cd $CURR_PATH
+
+if [ $? -eq 0 ]
+then
+  echo "Successfully pushed data"
+else
+  echo "Couldn't push data"
+  exit
+fi
 
 # import into production triple store
 echo -e "\n----------"

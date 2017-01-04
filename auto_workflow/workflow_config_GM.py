@@ -71,8 +71,8 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'Dimensions.csv-model.ttl',
-        'input_file': 'Dimensions.csv',
+        'model_file': 'Dimensions-model.ttl',
+        'input_file': 'Dimensions_clean.csv',
         'input_file_type': 'csv',
         'output_file_name': 'Dimensions'
     },
@@ -109,17 +109,17 @@ REPO_CONFIG = [
         'input_file_type': 'csv',
         'output_file_name': 'Medium'
     },
-    # {
-    #     'path': repo_path,
-    #     'name': 'Objects',
-    #     'base_uri': base_uri,
-    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-    #     'context_uri': context_uri,
-    #     'model_file': 'Objects-model.ttl',
-    #     'input_file': 'Objects.csv',
-    #     'input_file_type': 'csv',
-    #     'output_file_name': 'Objects'
-    # },
+    {
+        'path': repo_path,
+        'name': 'Objects',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'Objects-model.ttl',
+        'input_file': 'Objects_clean.csv',
+        'input_file_type': 'csv',
+        'output_file_name': 'Objects'
+    },
     {
         'path': repo_path,
         'name': 'Other_titles',
