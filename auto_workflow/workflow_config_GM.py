@@ -65,17 +65,17 @@ REPO_CONFIG = [
         'input_file_type': 'csv',
         'output_file_name': 'Constituents_role'
     },
-    # {
-    #     'path': repo_path,
-    #     'name': 'Dimensions',
-    #     'base_uri': base_uri,
-    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-    #     'context_uri': context_uri,
-    #     'model_file': 'Dimensions.csv-model.ttl',
-    #     'input_file': 'Dimensions.csv',
-    #     'input_file_type': 'csv',
-    #     'output_file_name': 'Dimensions'
-    # },
+    {
+        'path': repo_path,
+        'name': 'Dimensions',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'Dimensions.csv-model.ttl',
+        'input_file': 'Dimensions.csv',
+        'input_file_type': 'csv',
+        'output_file_name': 'Dimensions'
+    },
     {
         'path': repo_path,
         'name': 'Geography',
