@@ -116,10 +116,10 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'apiobjtitlexrefs_american-other_title-model.ttl',
+        'model_file': 'apiobjtitlexrefs_american-other_titles-model.ttl',
         'input_file': 'apiobjtitlexrefs_american.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiobjtitlexrefs_american-other_title'
+        'output_file_name': 'apiobjtitlexrefs_american-other_titles'
     },
     {
         'path': repo_path,
