@@ -12,6 +12,7 @@ REPOS = [
     'GM',
     'ima',
     'acm',
+    'puam',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'
