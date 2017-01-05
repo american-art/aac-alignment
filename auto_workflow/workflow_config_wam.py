@@ -20,7 +20,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Culture-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Culture'
+        'output_file_name': 'WAM_AAC_Culture',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -31,7 +32,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Institution-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Institution'
+        'output_file_name': 'WAM_AAC_Institution',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -42,7 +44,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Individual-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual'
+        'output_file_name': 'WAM_AAC_Individual',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -53,7 +56,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Individual_Birth-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Birth'
+        'output_file_name': 'WAM_AAC_Individual_Birth',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -64,7 +68,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Individual_Death-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Death'
+        'output_file_name': 'WAM_AAC_Individual_Death',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -75,7 +80,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Individual_Work-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Work'
+        'output_file_name': 'WAM_AAC_Individual_Work',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -108,7 +114,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Geography-PlaceOfOrigin-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Geography.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Geography_PlaceOfOrigin'
+        'output_file_name': 'WAM_AAC_Geography_PlaceOfOrigin',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -141,7 +148,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_Titles-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Titles_v2_11-2016.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Titles'
+        'output_file_name': 'WAM_AAC_Titles',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -152,7 +160,8 @@ REPO_CONFIG = [
         'model_file': 'WAM_AAC_OtherTitles-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Titles_v2_11-2016.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_OtherTitles'
+        'output_file_name': 'WAM_AAC_OtherTitles',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     }
 
 ]

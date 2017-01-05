@@ -7,7 +7,7 @@ LOG_LEVEL = logging.INFO
 ZIP_OUTPUT = True
 
 repo_name = 'puam'
-repo_path = './../../aac-repos/' + repo_name
+repo_path = '../../aac-repos/' + repo_name
 base_uri = 'http://data.americanartcollaborative.org/puam/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
@@ -20,7 +20,8 @@ REPO_CONFIG = [
         'model_file': 'apicongeography-birth-model.ttl',
         'input_file': 'apicongeography.json',
         'input_file_type': 'json',
-        'output_file_name': 'apicongeography-birth'
+        'output_file_name': 'apicongeography-birth',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -31,7 +32,8 @@ REPO_CONFIG = [
         'model_file': 'apicongeography-death-model.ttl',
         'input_file': 'apicongeography.json',
         'input_file_type': 'json',
-        'output_file_name': 'apicongeography-death'
+        'output_file_name': 'apicongeography-death',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -108,7 +110,8 @@ REPO_CONFIG = [
         'model_file': 'apiobjtitlexrefs_american-primary_title-model.ttl',
         'input_file': 'apiobjtitlexrefs_american.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiobjtitlexrefs_american-primary_title'
+        'output_file_name': 'apiobjtitlexrefs_american-primary_title',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -119,7 +122,8 @@ REPO_CONFIG = [
         'model_file': 'apiobjtitlexrefs_american-other_titles-model.ttl',
         'input_file': 'apiobjtitlexrefs_american.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiobjtitlexrefs_american-other_titles'
+        'output_file_name': 'apiobjtitlexrefs_american-other_titles',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -130,6 +134,7 @@ REPO_CONFIG = [
         'model_file': 'apiobjtitlexrefs_american-unknown_title-model.ttl',
         'input_file': 'apiobjtitlexrefs_american.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiobjtitlexrefs_american-unknown_title'
+        'output_file_name': 'apiobjtitlexrefs_american-unknown_title',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     }
 ]
