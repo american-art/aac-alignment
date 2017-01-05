@@ -7,7 +7,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'cbm'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/cbm/'
+base_uri = 'http://data.crystalbridges.org/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
