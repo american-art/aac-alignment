@@ -28,8 +28,9 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'aac-objects-model.ttl',
-        'input_file': 'aac-objects_folded.json',
-        'input_file_type': 'json',
-        'output_file_name': 'aac-objects'
+        'input_file': 'aac-objects_folded_jsonlines.json',
+        'input_file_type': 'jsonlines',
+        'output_file_name': 'aac-objects',
+        'num_partitions': 50
     },
 ]

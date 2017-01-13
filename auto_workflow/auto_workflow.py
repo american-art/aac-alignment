@@ -115,6 +115,10 @@ if __name__ == '__main__':
             # input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
         elif config['input_file_type'] == 'xml':
             input_rdd = sc.wholeTextFiles(config['input_file'])
+        elif config['input_file_type'] == 'jsonlines':
+            config['input_file_type'] = "json"
+            input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
+            #input_rdd = workflow.read_json_file(config['input_file'])
 
         # Apply the karma Model
         logging.info('apply karma model')
