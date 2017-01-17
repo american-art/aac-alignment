@@ -20,16 +20,16 @@ REPO_CONFIG = [
         'input_file': 'npgbibreferences.csv',
         'output_file_name': 'npgbibreferences'
     },
-    # {
-    #     'path': repo_path,
-    #     'name': 'NPGConAltNames',
-    #     'base_uri': base_uri,
-    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/Thing1',
-    #     'context_uri': context_uri,
-    #     'model_file': 'NPGConAltNames2-model.ttl',
-    #     'input_file': 'NPGConAltNames2.csv',
-    #     'output_file_name': 'NPGConAltNames2'
-    # },
+    {
+         'path': repo_path,
+         'name': 'NPGConAltNames',
+         'base_uri': base_uri,
+         'rdf_root_uri': 'http://www.w3.org/2002/07/owl#/Thing'
+         'context_uri': context_uri,
+         'model_file': 'NPGConAltNames2-model.ttl',
+         'input_file': 'NPGConAltNames2.csv',
+         'output_file_name': 'NPGConAltNames2'
+    },
     {
         'path': repo_path,
         'name': 'NPGConstituents',
@@ -40,16 +40,16 @@ REPO_CONFIG = [
         'input_file': 'NPGConstituents2.csv',
         'output_file_name': 'NPGConstituents2'
     },
-    # {
-    #     'path': repo_path,
-    #     'name': 'NPGConThesTerms',
-    #     'base_uri': base_uri,
-    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/Thing1',
-    #     'context_uri': context_uri,
-    #     'model_file': 'NPGConThesTerms2-model.ttl',
-    #     'input_file': 'NPGConThesTerms2.csv',
-    #     'output_file_name': 'NPGConThesTerms2'
-    # },
+    {
+        'path': repo_path,
+        'name': 'NPGConThesTerms',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.w3.org/2002/07/owl#/Thing'
+        'context_uri': context_uri,
+        'model_file': 'NPGConThesTerms2-model.ttl',
+        'input_file': 'NPGConThesTerms2.csv',
+        'output_file_name': 'NPGConThesTerms2'
+    },
     {
         'path': repo_path,
         'name': 'NPGDimsParsed',
