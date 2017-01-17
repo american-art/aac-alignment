@@ -17,8 +17,8 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
         'model_file': 'DMA_Constituents-model.ttl',
-        'input_file': 'Dallas Museum of Art - LOD - UPDATED',
-        'input_file_type': 'json',
+        'input_file': 'Dallas Museum of Art - LOD - UPDATED.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'DMA_Constituents-model'
     },
     {
@@ -28,8 +28,8 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'DMA-model.ttl',
-        'input_file': 'Dallas Museum of Art - LOD - UPDATED',
-        'input_file_type': 'json',
+        'input_file': 'Dallas Museum of Art - LOD - UPDATED.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'DMA-model'
     },
 ]
