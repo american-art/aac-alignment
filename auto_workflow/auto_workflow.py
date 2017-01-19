@@ -14,7 +14,6 @@ import shutil
 import time
 import zipfile
 from importlib import import_module
-# import workflow_config
 
 logging.basicConfig(
     stream = sys.stdout,
@@ -66,6 +65,8 @@ def init_repo_config(config):
         shutil.rmtree(output_dir)
         time.sleep(1)
 
+    logging.info('Config file: ' + str(config))
+
 def concatenate_output(output_file, output_dir):
     success_file = os.path.join(output_dir, '_SUCCESS')
     if not os.path.exists(success_file):
@@ -108,17 +109,12 @@ if __name__ == '__main__':
         if config['input_file_type'] == 'csv':
             input_rdd = workflow.batch_read_csv(config['input_file'])
         elif config['input_file_type'] == 'json':
-            # input_rdd = workflow.read_json_file(config['input_file'])
             input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
-            # print "Load file:", config['input_file']
-            #input_rdd = file_util.load_file(config['input_file'], file_format = 'text', data_type = 'json')
-            # input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
         elif config['input_file_type'] == 'xml':
             input_rdd = sc.wholeTextFiles(config['input_file'])
         elif config['input_file_type'] == 'jsonlines':
             config['input_file_type'] = "json"
             input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
-            #input_rdd = workflow.read_json_file(config['input_file'])
 
         # Apply the karma Model
         logging.info('apply karma model')
