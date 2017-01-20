@@ -5,141 +5,141 @@ import logging
 LOG_LEVEL = logging.INFO
 ZIP_OUTPUT = True
 
-repo_name = 'cbm'
+repo_name = 'GM'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.crystalbridges.org/'
+base_uri = 'http://data.americanartcollaborative.org/GM/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
         'path': repo_path,
-        'name': 'CBMAA_Constituents',
+        'name': 'Attributes',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_Constituents-model.ttl',
-        'input_file': 'LOD CBMAA Constituents.csv',
+        'model_file': 'Attributes-model.ttl',
+        'input_file': 'Attributes.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_Constituents'
+        'output_file_name': 'Attributes'
     },
     {
         'path': repo_path,
-        'name': 'CBMAA_Exhibitions',
+        'name': 'Classifications',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_Exhibitions-model.ttl',
-        'input_file': 'LOD CBMAA Exhibitions.csv',
+        'model_file': 'Classifications-model.ttl',
+        'input_file': 'Classifications.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_Exhibitions'
+        'output_file_name': 'Classifications'
     },
     {
         'path': repo_path,
-        'name': 'CBMAA_Objects',
+        'name': 'Constituents_institutions',
         'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_Objects-model.ttl',
-        'input_file': 'LOD CBMAA Objects_formatted.csv',
+        'model_file': 'Constituents_institutions-model.ttl',
+        'input_file': 'Constituents.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_Objects'
+        'output_file_name': 'Constituents_institutions'
     },
     {
         'path': repo_path,
-        'name': 'CBMAA_Titles',
+        'name': 'Constituents_people',
         'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_Titles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'model_file': 'Constituents_people-model.ttl',
+        'input_file': 'Constituents.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_Titles'
+        'output_file_name': 'Constituents_people'
     },
     {
         'path': repo_path,
-        'name': 'CBMAA_Titles',
+        'name': 'Constituents_role',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_OtherTitles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'model_file': 'Constituents_role-model.ttl',
+        'input_file': 'Constituents.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_OtherTitles'
+        'output_file_name': 'Constituents_role'
     },
     {
         'path': repo_path,
-        'name': 'CBMAA_Titles',
+        'name': 'Dimensions',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'CBMAA_UnknownTitles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'model_file': 'Dimensions-model.ttl',
+        'input_file': 'Dimensions_clean.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'CBMAA_UnknownTitles'
+        'output_file_name': 'Dimensions'
     },
     {
         'path': repo_path,
-        'name': 'PG_Constituents',
+        'name': 'Geography',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_Constituents-model.ttl',
-        'input_file': 'LOD PG Constituents.csv',
+        'model_file': 'Geography-model.ttl',
+        'input_file': 'Geography.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_Constituents'
+        'output_file_name': 'Geography'
     },
     {
         'path': repo_path,
-        'name': 'PG_Exhibitions',
+        'name': 'Media_primary',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_Exhibitions-model.ttl',
-        'input_file': 'LOD PG Exhibitions.csv',
+        'model_file': 'Media_primary-model.ttl',
+        'input_file': 'Media_primary.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_Exhibitions'
+        'output_file_name': 'Media_primary'
     },
     {
         'path': repo_path,
-        'name': 'PG_Objects',
+        'name': 'Medium',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_Objects-model.ttl',
-        'input_file': 'LOD PG Objects_formatted.csv',
+        'model_file': 'Medium-model.ttl',
+        'input_file': 'Medium.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_Objects'
+        'output_file_name': 'Medium'
     },
     {
         'path': repo_path,
-        'name': 'PG_Titles',
+        'name': 'Objects',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_Titles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'model_file': 'Objects-model.ttl',
+        'input_file': 'Objects_clean.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_Titles'
+        'output_file_name': 'Objects'
     },
     {
         'path': repo_path,
-        'name': 'PG_Titles',
+        'name': 'Other_titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_OtherTitles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'model_file': 'Other_titles-model.ttl',
+        'input_file': 'Titles.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_OtherTitles'
+        'output_file_name': 'Other_titles'
     },
     {
         'path': repo_path,
-        'name': 'PG_Titles',
+        'name': 'Titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'PG_UnknownTitles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'model_file': 'Titles-model.ttl',
+        'input_file': 'Titles.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'PG_UnknownTitles'
-    }
+        'output_file_name': 'Titles'
+    },
 ]

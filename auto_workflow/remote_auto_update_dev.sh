@@ -2,25 +2,51 @@
 
 CURR_PATH="$(pwd)"
 
+# Check empty string.
 if [ -z $1 ]; then
     echo "No such repo"
     exit
 fi
 
-# git pull
-echo "----------"
-echo "1. Synchronize data from Github"
-REPO_PATH="../../aac-repos/$1"
-if [ ! -d $REPO_PATH ]; then
-    echo "Repo directory doesn't exist"
-    exit
+# Check for AAC_ROOT variable
+if [ -z "$AAC_ROOT" ]; then
+	echo "AAC_ROOT not set. Halting!"
+	echo "Use 'source paths.sh' to set required paths."
+	exit
 fi
-cd $REPO_PATH
-git status
-#git checkout -- .
-#git clean -fd
-#git pull
+
+# Check for spark-submit command
+ss=`which spark-submit`
+if [ -z "$ss" ]; then
+	echo "Spark-submit not in the path. Halting!"
+	echo "Use 'source paths.sh' to set required paths."
+	exit
+fi
+
+# Get latest data.
+echo -e "\n----------"
+echo "1. Synchronize data from Github"
+REPO_PATH=$AAC_ROOT/aac-repos/$1
+if [ ! -d $REPO_PATH ]; then
+    echo "Repo doesn't exist. Doing git clone..."
+    cd $AAC_ROOT/aac-repos
+	git clone git@github.com:american-art/$1.git
+else
+	echo "Repo already exists. Doing git clean n pull..."
+	cd $AAC_ROOT/aac-repos/$1
+	git checkout -- .
+	git clean -fd
+	git pull
+fi
 cd $CURR_PATH
+
+if [ $? -eq 0 ]
+then
+  echo "Successfully synchronized data"
+else
+  echo "Couldn't synchornize data"
+  exit
+fi
 
 # applay karma model
 echo -e "\n----------"
@@ -30,15 +56,24 @@ if [ ! -f "${CONFIG_FILE}.py" ]; then
     echo "Repo configuration file doesn't exist"
     exit
 fi
-# local version
-spark-submit --archives ~/ISI/aac-dependencies/karma.zip --py-files ~/ISI/aac-dependencies/python-lib.zip --driver-class-path ~/ISI/softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE
-# server version
-# /opt/aac-softwares/spark-1.5.0-cdh5.5.0/bin/spark-submit --archives /opt/aac-dependencies/karma.zip --py-files /opt/aac-dependencies/python-lib.zip --driver-class-path /opt/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE
+spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROOT/aac-dependencies/python-lib.zip --driver-class-path $AAC_ROOT/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE \
+--executor-memory 4g \
+--num-executors 1 \
+--executor-cores 1
 
-# import into triple store
+if [ $? -eq 0 ]
+then
+  echo "Successfully applied all models"
+else
+  echo "Error occured while applying models"
+  exit
+fi
+
+# import into dev triple store
 echo -e "\n----------"
-echo "3. Import into triple store"
+echo "3. Import into dev triple store (american-art-dev)"
 python auto_import.py "$1" dev
 
 echo -e "\n----------"
+echo "Test your data at http://localhost:3030/american-art-dev/query or http://data.americanartcollaborative.org/sparql_dev"
 echo "DONE!"

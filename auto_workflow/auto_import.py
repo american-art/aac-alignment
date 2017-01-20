@@ -31,7 +31,6 @@ def import_data(data, dataset, graph = 'default'):
     files = {
         'file': ('file.n3', data, 'application/octet-stream')
     }
-    logging.info('import data into graph: ' + graph)
     headers = {}
     if FUSEKI_ACCOUNT != None:
         headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
@@ -39,6 +38,8 @@ def import_data(data, dataset, graph = 'default'):
         resp = req.post(url = url, files = files, headers = headers, timeout = NETWORK_TIMEOUT)
         if resp.status_code // 100 != 2:
             logging.error(http_error_format(resp))
+        logging.info('imported into graph : ' + graph)
+
     except Exception as e:
         logging.error(e)
 
@@ -91,22 +92,21 @@ if __name__ == '__main__':
             continue
 
         logging.info('process on directory: ' + curr_dir)
+        output = os.path.join(curr_dir, OUTPUT_DIR)
+
         # unzip .n3.zip file to output dir and import unzipped .n3 file to tdb
         for name in os.listdir(curr_dir):
             if name.endswith('.n3.zip'):
                 zip_file = os.path.join(curr_dir, name)
-                output = os.path.join(curr_dir, OUTPUT_DIR)
                 zip_extract(zip_file, output)
 
-                for name in os.listdir(output):
-                    file = os.path.join(output, name)
-                    if os.path.isfile(file) and name.endswith('.n3'):
-                        f = open(file, 'r')
-                        data = f.read()
-                        f.close()
-                        logging.info('import data piece: ' + name)
-                        import_data(data, dataset, GRAPH_BASE_URL + repo)
-
-
-
-
+        # Read all n3 file and load its data into triple store
+        if os.path.isdir(output):
+            for name in os.listdir(output):
+	        file = os.path.join(output, name)
+                if os.path.isfile(file) and name.endswith('.n3'):
+                    f = open(file, 'r')
+                    data = f.read()
+                    f.close()
+                    logging.info('importing data file : ' + name)
+                    import_data(data, dataset, GRAPH_BASE_URL + repo)

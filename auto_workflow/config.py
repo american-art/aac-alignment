@@ -3,13 +3,17 @@ import logging
 
 DIR_PATH = './../../aac-repos/'
 REPOS = [
+    'acm',
     'autry',
-    'npg',
     'cbm',
-    'wam',
-    'nmwa',
     'ccma',
+    'dma',
+    'GM',
     'ima',
+    'nmwa',
+    'npg',
+    'puam',
+    'wam',
 ]
 IGNORE_DIRS = ['.git']
 OUTPUT_DIR = 'output'
@@ -17,7 +21,6 @@ OUTPUT_DIR = 'output'
 # tdb should set `tdb:unionDefaultGraph true`
 FUSEKI_URL = 'http://localhost:3030'
 GRAPH_BASE_URL = 'http://data.americanartcollaborative.org/'
-# GRAPH_BASE_URL = 'http://data.aac.org/'
 # FUSEKI_ACCOUNT = ('', '')
 FUSEKI_ACCOUNT = None
 TDB_DATASET_NAME = 'american-art'
