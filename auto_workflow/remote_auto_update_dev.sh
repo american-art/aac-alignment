@@ -44,7 +44,7 @@ if [ $? -eq 0 ]
 then
   echo "Successfully synchronized data"
 else
-  echo "Couldn't synchornize data"
+  echo "Couldn't synchronize data"
   exit
 fi
 
@@ -56,16 +56,19 @@ if [ ! -f "${CONFIG_FILE}.py" ]; then
     echo "Repo configuration file doesn't exist"
     exit
 fi
-spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROOT/aac-dependencies/python-lib.zip --driver-class-path $AAC_ROOT/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar auto_workflow.py $CONFIG_FILE \
---executor-memory 4g \
+spark-submit --archives $AAC_ROOT/aac-dependencies/karma.zip --py-files $AAC_ROOT/aac-dependencies/python-lib.zip \
+--executor-memory 1g \
 --num-executors 1 \
---executor-cores 1
+--executor-cores 1 \
+--driver-class-path $AAC_ROOT/aac-softwares/Web-Karma/karma-spark/target/karma-spark-0.0.1-SNAPSHOT-shaded.jar \
+auto_workflow.py $CONFIG_FILE
+#custom_workflow.py "/opt/aac-repos/cbm/CBMAA_Roles/LOD CBMAA Constituents.csv" /opt/aac-out/
 
 if [ $? -eq 0 ]
 then
   echo "Successfully applied all models"
 else
-  echo "Error occured while applying models"
+  echo "Error occurred while applying models"
   exit
 fi
 

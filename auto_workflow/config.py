@@ -13,6 +13,7 @@ REPOS = [
     'nmwa',
     'npg',
     'puam',
+    'saam',
     'wam',
 ]
 IGNORE_DIRS = ['.git']

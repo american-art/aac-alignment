@@ -107,7 +107,7 @@ if __name__ == '__main__':
         # Read the input
         logging.info('read input file: ' + config['input_file'])
         if config['input_file_type'] == 'csv':
-            input_rdd = workflow.batch_read_csv(config['input_file'])
+            input_rdd = workflow.batch_read_csv(config['input_file']).partitionBy(config['num_partitions'])
         elif config['input_file_type'] == 'json':
             input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
         elif config['input_file_type'] == 'xml':

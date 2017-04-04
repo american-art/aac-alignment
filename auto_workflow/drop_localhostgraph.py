@@ -21,20 +21,13 @@ logging.basicConfig(
 
 def drop_graph(dataset, graph):
 
-    datadir = os.path.join(os.environ['AAC_ROOT'],"aac-repos",graph)
-    print "Deleting dir: ", datadir 
-    shutil.rmtree(datadir,ignore_errors=True) 
-
     url = '%s/%s/update' % (FUSEKI_URL, dataset)
     data = {}
-    data['update'] = 'drop graph<%s%s>' % (GRAPH_BASE_URL, graph)
-
-    logging.info('drop graph: ' + GRAPH_BASE_URL + graph)
-    headers = {}
-    if FUSEKI_ACCOUNT != None:
-        headers['Authorization'] = 'Basic ' + base64.b64encode(FUSEKI_ACCOUNT[0] + ':' + FUSEKI_ACCOUNT[1])
+    data['update'] = 'drop graph<%s/%s/%s>' % (FUSEKI_URL, dataset, graph)
+    logging.info('drop graph: ',data['update'])
+    
     try:
-        resp = req.post(url = url, data = data, headers = headers, timeout = NETWORK_TIMEOUT)
+        resp = req.post(url = url, data = data, headers = {}, timeout = NETWORK_TIMEOUT)
         if resp.status_code // 100 != 2:
             logging.error('drop graph: [%d]' % resp.status_code)
             return
@@ -48,15 +41,14 @@ if __name__ == '__main__':
     dataset = TDB_DATASET_NAME if sys.argv[1] == 'pro' else TDB_DEV_DATASET_NAME
     if graph in REPOS:
         logging.info('Removing Graph '+graph+' from dataset '+dataset)
-        abs_path = os.path.join(os.path.abspath(DIR_PATH), graph)
         drop_graph(dataset, graph)
     elif graph == ".":
         for g in REPOS:
             logging.info('Removing Graph '+g+' from dataset '+dataset)
-            abs_path = os.path.join(os.path.abspath(DIR_PATH), g)
             drop_graph(dataset, g)
     else:
         logging.error('invalid museum')
         sys.exit()
+
 
 

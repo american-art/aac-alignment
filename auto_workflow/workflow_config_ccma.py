@@ -12,13 +12,24 @@ context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-c
 REPO_CONFIG = [
     {
         'path': repo_path,
-        'name': 'ccmadata',
+        'name': 'ccma_artists',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+        'context_uri': context_uri,
+        'model_file': 'ccma_artists-model.ttl',
+        'input_file': 'ccma_artists.json',
+        'input_file_type': 'json',
+        'output_file_name': 'ccma_artists'
+    },
+    {
+        'path': repo_path,
+        'name': 'ccma_objects',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'ccma-museum-model.ttl',
-        'input_file': 'ccma-objects_artists_exhibs.json',
+        'model_file': 'ccma_objects-model.ttl',
+        'input_file': 'ccma_objects.json',
         'input_file_type': 'json',
-        'output_file_name': 'ccma-museum'
-    },
+        'output_file_name': 'ccma_objects'
+    }
 ]

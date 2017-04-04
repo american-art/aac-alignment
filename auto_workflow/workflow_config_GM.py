@@ -41,7 +41,8 @@ REPO_CONFIG = [
         'model_file': 'Constituents_institutions-model.ttl',
         'input_file': 'Constituents.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'Constituents_institutions'
+        'output_file_name': 'Constituents_institutions',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -50,9 +51,11 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
         'model_file': 'Constituents_people-model.ttl',
-        'input_file': 'Constituents.csv',
-        'input_file_type': 'csv',
-        'output_file_name': 'Constituents_people'
+        'input_file': 'Constituents.json',
+        'input_file_type': 'jsonlines',
+        'output_file_name': 'Constituents_people',
+        'num_partitions': 50,
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -72,9 +75,10 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'Dimensions-model.ttl',
-        'input_file': 'Dimensions_clean.csv',
-        'input_file_type': 'csv',
-        'output_file_name': 'Dimensions'
+        'input_file': 'Dimensions.json',
+        'input_file_type': 'jsonlines',
+        'output_file_name': 'Dimensions',
+        'num_partitions': 50
     },
     {
         'path': repo_path,
@@ -116,9 +120,10 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'Objects-model.ttl',
-        'input_file': 'Objects_clean.csv',
-        'input_file_type': 'csv',
-        'output_file_name': 'Objects'
+        'input_file': 'Objects.json',
+        'input_file_type': 'jsonlines',
+        'output_file_name': 'Objects',
+        'num_partitions': 50
     },
     {
         'path': repo_path,
@@ -129,7 +134,8 @@ REPO_CONFIG = [
         'model_file': 'Other_titles-model.ttl',
         'input_file': 'Titles.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'Other_titles'
+        'output_file_name': 'Other_titles',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
         'path': repo_path,
@@ -140,6 +146,7 @@ REPO_CONFIG = [
         'model_file': 'Titles-model.ttl',
         'input_file': 'Titles.csv',
         'input_file_type': 'csv',
-        'output_file_name': 'Titles'
+        'output_file_name': 'Titles',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
 ]

@@ -13,9 +13,68 @@ context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-c
 REPO_CONFIG = [
     {
         'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
+        'name': 'WAM_AAC_Constituents_individual',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Constituents_individual-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Constituents_individual',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Constituents_institution',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Constituents_institution-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Constituents_institution',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Constituents_individual_death',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Constituents_individual_death-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Constituents_individual_death',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Constituents_individual_birth',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Constituents_individual_birth-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Constituents_individual_birth',
+        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Constituents_role',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'WAM_AAC_Constituents_role-model.ttl',
+        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
+        'input_file_type': 'xml',
+        'output_file_name': 'WAM_AAC_Constituents_role'
+    },
+    {
+        'path': repo_path,
+        'name': 'WAM_AAC_Culture',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
         'model_file': 'WAM_AAC_Culture-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
@@ -25,85 +84,14 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Institution-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Institution',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_Birth-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Birth',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_Death-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Death',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
-        'name': 'WAM_AAC_Constituents',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Individual_Work-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Constituents_V3.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Individual_Work',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
         'name': 'WAM_AAC_Dimensions',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'WAM_AAC_Dimensions-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Dimensions.xml',
+        'input_file': 'WAM_XMLExport_AAC_Dimensions_v2.xml',
         'input_file_type': 'xml',
         'output_file_name': 'WAM_AAC_Dimensions'
-    },
-    {
-        'path': repo_path,
-        'name': 'WAM_AAC_Exhibitions',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Exhibitions-model.ttl',
-        'input_file': 'WAM_XMLExport_AAC_Exhibitions.xml',
-        'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Exhibitions'
     },
     {
         'path': repo_path,
@@ -111,10 +99,10 @@ REPO_CONFIG = [
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'WAM_AAC_Geography-PlaceOfOrigin-model.ttl',
+        'model_file': 'WAM_AAC_Geography-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Geography.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_Geography_PlaceOfOrigin',
+        'output_file_name': 'WAM_AAC_Geography',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
     {
@@ -153,15 +141,14 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'WAM_AAC_Titles',
+        'name': 'WAM_AAC_Other_titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
-        'model_file': 'WAM_AAC_OtherTitles-model.ttl',
+        'model_file': 'WAM_AAC_Other_titles-model.ttl',
         'input_file': 'WAM_XMLExport_AAC_Titles_v2_11-2016.xml',
         'input_file_type': 'xml',
-        'output_file_name': 'WAM_AAC_OtherTitles',
+        'output_file_name': 'WAM_AAC_Other_titles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     }
-
 ]

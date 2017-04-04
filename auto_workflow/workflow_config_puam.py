@@ -48,14 +48,14 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apiexhibitions_american',
+        'name': 'apiconuris',
         'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E5_Event1',
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
-        'model_file': 'apiexhibitions_american-model.ttl',
-        'input_file': 'apiexhibitions_american.json',
+        'model_file': 'apiconuris-model.ttl',
+        'input_file': 'apiconuris.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiexhibitions_american'
+        'output_file_name': 'apiconuris'
     },
     {
         'path': repo_path,
@@ -92,17 +92,6 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apiobjexhxrefs_american',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-        'context_uri': context_uri,
-        'model_file': 'apiobjexhxrefs_american-model.ttl',
-        'input_file': 'apiobjexhxrefs_american.json',
-        'input_file_type': 'json',
-        'output_file_name': 'apiobjexhxrefs_american'
-    },
-    {
-        'path': repo_path,
         'name': 'apiobjtitlexrefs_american',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
@@ -136,5 +125,38 @@ REPO_CONFIG = [
         'input_file_type': 'json',
         'output_file_name': 'apiobjtitlexrefs_american-unknown_title',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+        'path': repo_path,
+        'name': 'apiobjgeograph_american',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'apiobjgeograph_american-model.ttl',
+        'input_file': 'apiobjgeograph_american.json',
+        'input_file_type': 'json',
+        'output_file_name': 'apiobjgeograph_american',
+    },
+    {
+        'path': repo_path,
+        'name': 'apiobjmediaxrefs_american',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'apiobjmediaxrefs_american-model.ttl',
+        'input_file': 'apiobjmediaxrefs_american.json',
+        'input_file_type': 'json',
+        'output_file_name': 'apiobjmediaxrefs_american',
+    },
+    {
+        'path': repo_path,
+        'name': 'apiobjtermsxrefs_american',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'apiobjtermsxrefs_american-model.ttl',
+        'input_file': 'apiobjtermsxrefs_american.json',
+        'input_file_type': 'json',
+        'output_file_name': 'apiobjtermsxrefs_american',
     }
 ]
