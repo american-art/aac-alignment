@@ -18,6 +18,7 @@ REPO_CONFIG = [
          'context_uri': context_uri,
          'model_file': 'NPGConAltNames2-model.ttl',
          'input_file': 'NPGConAltNames2.csv',
+         'input_file_type': 'csv',
          'output_file_name': 'NPGConAltNames2'
     },
     {
@@ -28,6 +29,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGConstituents2-model.ttl',
         'input_file': 'NPGConstituents2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGConstituents2'
     },
     {
@@ -38,6 +40,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGConThesTerms2-model.ttl',
         'input_file': 'NPGConThesTerms2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGConThesTerms2'
     },
     {
@@ -47,8 +50,9 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'NPGDims-model.ttl',
-        'input_file': 'NPGDimsParsedUpdate2May.csv',
-        'output_file_name': 'NPGDimsParsedUpdate2May'
+        'input_file': 'NPGDimsParsedUpdate1Nov.csv',
+        'input_file_type': 'csv',
+        'output_file_name': 'NPGDims'
     },
     {
         'path': repo_path,
@@ -58,6 +62,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjConXrefs2-model.ttl',
         'input_file': 'NPGObjConXrefs2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjConXrefs2'
     },
     {
@@ -68,6 +73,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjects2-model.ttl',
         'input_file': 'NPGObjects2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjects2'
     },
     {
@@ -78,6 +84,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjProvenance_2-model.ttl',
         'input_file': 'NPGObjProvenance_2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjProvenance_2'
     },
     {
@@ -88,6 +95,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjTitles2-model.ttl',
         'input_file': 'NPGObjTitles2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjTitles2',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
@@ -99,6 +107,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjAltTitles2-model.ttl',
         'input_file': 'NPGObjTitles2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjAltTitles2',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
@@ -110,6 +119,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGObjURLs-model.ttl',
         'input_file': 'NPGObjURLs.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGObjURLs'
     },
     {
@@ -120,6 +130,18 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'NPGWebImageURLs_2-model.ttl',
         'input_file': 'NPGWebImageURLs_2.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'NPGWebImageURLs_2'
     },
+    {
+        'path': repo_path,
+        'name': 'NPGObjThesTerms',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'NPGObjThesTerms-model.ttl',
+        'input_file': 'NPGObjThesTerms2.csv',
+        'input_file_type': 'csv',
+        'output_file_name': 'NPGObjThesTerms'
+    }
 ]
