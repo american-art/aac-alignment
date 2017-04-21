@@ -85,28 +85,35 @@ if __name__ == '__main__':
     abs_path = os.path.join(abs_path, repo)
 
     drop_graph(dataset, repo)
-    for name in os.listdir(abs_path):
+    for dir_name in os.listdir(abs_path):
         # ignore IGNORE_DIRS and non-dir files
-        curr_dir = os.path.join(abs_path, name)
-        if name in IGNORE_DIRS or not os.path.isdir(curr_dir):
+        curr_dir = os.path.join(abs_path, dir_name)
+        if dir_name in IGNORE_DIRS or not os.path.isdir(curr_dir):
             continue
 
         logging.info('process on directory: ' + curr_dir)
         output = os.path.join(curr_dir, OUTPUT_DIR)
 
         # unzip .n3.zip file to output dir and import unzipped .n3 file to tdb
-        for name in os.listdir(curr_dir):
-            if name.endswith('.n3.zip'):
-                zip_file = os.path.join(curr_dir, name)
+        for n3_name in os.listdir(curr_dir):
+            # Ignore n3.zip from curated folder
+            if n3_name.endswith('.n3.zip'):
+                zip_file = os.path.join(curr_dir, n3_name)
                 zip_extract(zip_file, output)
 
         # Read all n3 file and load its data into triple store
         if os.path.isdir(output):
-            for name in os.listdir(output):
-	        file = os.path.join(output, name)
-                if os.path.isfile(file) and name.endswith('.n3'):
+            for o_name in os.listdir(output):
+                file = os.path.join(output, o_name)
+                if os.path.isfile(file) and o_name.endswith('.n3'):
                     f = open(file, 'r')
                     data = f.read()
                     f.close()
-                    logging.info('importing data file : ' + name)
-                    import_data(data, dataset, GRAPH_BASE_URL + repo)
+                    logging.info('importing data file : ' + o_name)
+                    
+                    # n3 file containing curated results go to "curated" graph
+                    if 'curated.n3' in o_name:
+                        # Data -> actual data, dataset -> american-art/dev, grpah-> "/curated"
+                        import_data(data, dataset, GRAPH_BASE_URL + "curated")
+                    else:
+                        import_data(data, dataset, GRAPH_BASE_URL + repo)
