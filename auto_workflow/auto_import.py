@@ -84,7 +84,10 @@ if __name__ == '__main__':
     abs_path = os.path.abspath(DIR_PATH)
     abs_path = os.path.join(abs_path, repo)
 
+    # Drop both the graphs of a museum, default and curated
     drop_graph(dataset, repo)
+    drop_graph(dataset, "curated_"+repo)
+    
     for dir_name in os.listdir(abs_path):
         # ignore IGNORE_DIRS and non-dir files
         curr_dir = os.path.join(abs_path, dir_name)
@@ -114,6 +117,6 @@ if __name__ == '__main__':
                     # n3 file containing curated results go to "curated" graph
                     if 'curated.n3' in o_name:
                         # Data -> actual data, dataset -> american-art/dev, grpah-> "/curated"
-                        import_data(data, dataset, GRAPH_BASE_URL + "curated")
+                        import_data(data, dataset, GRAPH_BASE_URL + "curated_" + repo)
                     else:
                         import_data(data, dataset, GRAPH_BASE_URL + repo)
