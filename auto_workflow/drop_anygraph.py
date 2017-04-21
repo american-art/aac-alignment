@@ -47,8 +47,8 @@ if __name__ == '__main__':
         sys.exit()
     
     dataset = TDB_DATASET_NAME if sys.argv[1] == 'pro' else TDB_DEV_DATASET_NAME
-    graph = sys.argv[2]
-    graphbaseurl = sys.argv[3]
+    graphbaseurl = sys.argv[2]
+    graph = sys.argv[3]
     
     logging.info('Dropping Graph '+graphbaseurl+dataset+'/'+graph)
     drop_graph(dataset, graphbaseurl, graph)
