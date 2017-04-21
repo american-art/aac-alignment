@@ -48,15 +48,15 @@ if __name__ == '__main__':
     dataset = TDB_DATASET_NAME if sys.argv[1] == 'pro' else TDB_DEV_DATASET_NAME
     if graph in REPOS:
         logging.info('Removing Graph '+graph+' from dataset '+dataset)
-        abs_path = os.path.join(os.path.abspath(DIR_PATH), graph)
         drop_graph(dataset, graph)
+        logging.info('Removing Graph curated_'+graph+' from dataset '+dataset)
+        drop_graph(dataset, "curated_"+graph)
     elif graph == ".":
         for g in REPOS:
             logging.info('Removing Graph '+g+' from dataset '+dataset)
-            abs_path = os.path.join(os.path.abspath(DIR_PATH), g)
             drop_graph(dataset, g)
+            logging.info('Removing Graph curated_'+g+' from dataset '+dataset)
+            drop_graph(dataset, "curated_"+g)
     else:
         logging.error('invalid museum')
         sys.exit()
-
-
