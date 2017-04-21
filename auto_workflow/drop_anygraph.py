@@ -21,10 +21,9 @@ logging.basicConfig(
 
 def drop_graph(dataset, graphbaseurl, graph):
 
-    url = '%s/%s/update' % (graphbaseurl, dataset)
+    url = '%s/%s/update' % (FUSEKI_URL, dataset)
     data = {}
-    data['update'] = 'drop graph<%s/%s/%s>' % (graphbaseurl, dataset, graph)
-    logging.info('drop graph: ',data['update'])
+    data['update'] = 'drop graph<%s%s>' % (graphbaseurl, graph) 
     
     try:
         resp = req.post(url = url, data = data, headers = {}, timeout = NETWORK_TIMEOUT)
