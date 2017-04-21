@@ -43,7 +43,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) != 4:
         logging.error('invalid arguments')
-        looging.error('Usage: python drop_customgraph.py [dev|pro] [graph_baseurl] [graph_name]')
+        logging.error('Usage: python drop_customgraph.py [dev|pro] [graph_baseurl] [graph_name]')
         sys.exit()
     
     dataset = TDB_DATASET_NAME if sys.argv[1] == 'pro' else TDB_DEV_DATASET_NAME
