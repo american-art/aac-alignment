@@ -3,6 +3,7 @@ import logging
 
 DIR_PATH = './../../aac-repos/'
 REPOS = [
+    'aaa',
     'acm',
     'autry',
     'cbm',
