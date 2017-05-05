@@ -15,6 +15,7 @@ REPOS = [
     'npg',
     'puam',
     'saam',
+    'YCBA',
     'wam',
 ]
 IGNORE_DIRS = ['.git']
