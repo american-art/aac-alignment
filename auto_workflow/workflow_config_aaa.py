@@ -33,5 +33,27 @@ REPO_CONFIG = [
        'input_file_type': 'csv',
        'output_file_name': 'Item_Institutions'
     },
+    {
+       'path': repo_path,
+       'name': 'Item',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+       'context_uri': context_uri,
+       'model_file': 'Item-model.ttl',
+       'input_file': 'Item.csv',
+       'input_file_type': 'csv',
+       'output_file_name': 'Item'
+    },
+    {
+       'path': repo_path,
+       'name': 'Item_Subjects',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+       'context_uri': context_uri,
+       'model_file': 'Item_Subjects-model.ttl',
+       'input_file': 'Item_Subjects.csv',
+       'input_file_type': 'csv',
+       'output_file_name': 'Item_Subjects'
+    }
 ]
   
