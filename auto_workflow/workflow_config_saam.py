@@ -132,8 +132,8 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'WebObjCaption-model.ttl',
-        'input_file': 'WebObjCaption.json',
-        'input_file_type': 'jsonlines',
+        'input_file': 'WebObjCaption.csv',
+        'input_file_type': 'csv',
         'output_file_name': 'WebObjCaption',
         'num_partitions': 50
     },
