@@ -44,30 +44,30 @@ REPO_CONFIG = [
         'input_file_type': 'csv',
         'output_file_name': 'WebConAltNames'
     },
-    {
-        'path': repo_path,
-        'name': 'WebConDatesBirth',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
-        'context_uri': context_uri,
-        'model_file': 'WebConDatesBirth-model.ttl',
-        'input_file': 'WebConDates.csv',
-        'input_file_type': 'csv',
-        'output_file_name': 'WebConDatesBirth',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
-    {
-        'path': repo_path,
-        'name': 'WebConDatesDeath',
-        'base_uri': base_uri,
-        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
-        'context_uri': context_uri,
-        'model_file': 'WebConDatesDeath-model.ttl',
-        'input_file': 'WebConDates.csv',
-        'input_file_type': 'csv',
-        'output_file_name': 'WebConDatesDeath',
-        'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    },
+    # {
+    #     'path': repo_path,
+    #     'name': 'WebConDatesBirth',
+    #     'base_uri': base_uri,
+    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+    #     'context_uri': context_uri,
+    #     'model_file': 'WebConDatesBirth-model.ttl',
+    #     'input_file': 'WebConDates.csv',
+    #     'input_file_type': 'csv',
+    #     'output_file_name': 'WebConDatesBirth',
+    #     'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    # },
+    # {
+    #     'path': repo_path,
+    #     'name': 'WebConDatesDeath',
+    #     'base_uri': base_uri,
+    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
+    #     'context_uri': context_uri,
+    #     'model_file': 'WebConDatesDeath-model.ttl',
+    #     'input_file': 'WebConDates.csv',
+    #     'input_file_type': 'csv',
+    #     'output_file_name': 'WebConDatesDeath',
+    #     'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    # },
     {
         'path': repo_path,
         'name': 'WebConGeographyBirth',
@@ -135,6 +135,18 @@ REPO_CONFIG = [
         'input_file': 'WebObjCaption.json',
         'input_file_type': 'jsonlines',
         'output_file_name': 'WebObjCaption',
+        'num_partitions': 50
+    },
+    {
+        'path': repo_path,
+        'name': 'WebObjDescription',
+        'base_uri': base_uri,
+        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+        'context_uri': context_uri,
+        'model_file': 'WebObjDescription-model.ttl',
+        'input_file': 'WebObjDescription.csv',
+        'input_file_type': 'csv',
+        'output_file_name': 'WebObjDescription',
         'num_partitions': 50
     },
     {
