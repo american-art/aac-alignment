@@ -6,6 +6,7 @@ import requests
 import base64
 import colorer
 import zipfile
+from itertools import islice
 
 # config
 from config import *
@@ -109,14 +110,18 @@ if __name__ == '__main__':
             for o_name in os.listdir(output):
                 file = os.path.join(output, o_name)
                 if os.path.isfile(file) and o_name.endswith('.n3'):
-                    f = open(file, 'r')
-                    data = f.read()
-                    f.close()
                     logging.info('importing data file : ' + o_name)
                     
-                    # n3 file containing curated results go to "curated" graph
-                    if 'curated.n3' in o_name:
-                        # Data -> actual data, dataset -> american-art/dev, grpah-> "/curated"
-                        import_data(data, dataset, GRAPH_BASE_URL + "curated_" + repo)
-                    else:
-                        import_data(data, dataset, GRAPH_BASE_URL + repo)
+                    chunk_size = 10000 # read 10k lines everytime
+                    with open(file, 'r') as f:
+                        while True:
+                            next_chunk = list(islice(f, chunk_size)) 
+                            if not next_chunk:
+                                break
+
+                            # n3 file containing curated results go to "curated" graph
+                            if 'curated.n3' in o_name:
+                                # Data -> actual data, dataset -> american-art/dev, graph-> "/curated"
+                                import_data(next_chunk, dataset, GRAPH_BASE_URL + "curated_" + repo)
+                            else:
+                                import_data(next_chunk, dataset, GRAPH_BASE_URL + repo)
