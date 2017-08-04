@@ -112,10 +112,10 @@ if __name__ == '__main__':
                 if os.path.isfile(file) and o_name.endswith('.n3'):
                     logging.info('importing data file : ' + o_name)
                     
-                    chunk_size = 10000 # read 10k lines everytime
+                    chunk_size = 100000 # read 100k lines everytime
                     with open(file, 'r') as f:
                         while True:
-                            next_chunk = list(islice(f, chunk_size)) 
+                            next_chunk = ''.join(list(islice(f, chunk_size)))
                             if not next_chunk:
                                 break
 
