@@ -17,8 +17,8 @@ from importlib import import_module
 
 logging.basicConfig(
     stream = sys.stdout,
-	format = '%(asctime)s [%(levelname)s] %(message)s',
-	datefmt = '%d %b %Y %H:%M:%S'
+    format = '%(asctime)s [%(levelname)s] %(message)s',
+    datefmt = '%d %b %Y %H:%M:%S'
 )
 
 def init_repo_config(config):
@@ -100,6 +100,14 @@ if __name__ == '__main__':
     file_util = FileUtil(sc)
     workflow = Workflow(sc)
 
+    # clean up previous consolidated data
+    consolidated_file = os.path.join(config_module.repo_path, 'consolidated_data.n3')
+    consolidated_file_zip = os.path.join(config_module.repo_path, 'consolidated_data.n3.zip')
+    if os.path.exists(consolidated_file):
+        os.remove(consolidated_file)
+    if os.path.exists(consolidated_file_zip):
+        os.remove(consolidated_file_zip)
+
     logging.info('Number of model: %d' % len(config_module.REPO_CONFIG))
     for config in config_module.REPO_CONFIG:
         init_repo_config(config)
@@ -133,6 +141,18 @@ if __name__ == '__main__':
         # output_rdd.values().saveAsTextFile(config['output_file'])
         output_rdd.values().distinct().saveAsTextFile(config['output_dir'])
 
-        # # concatenate to a single file and zip it
+        # concatenate partitions to a single file
         concatenate_output(config['output_file'], config['output_dir'])
+
+        # concatenate to consolidated data
+        with open(consolidated_file, 'a') as output:
+            with open(config['output_file'], 'r') as input:
+                for line in input:
+                    output.write(line)
+
+        # zip and delete
         zip_file(config['output_file'], True)
+
+    # zip consolidated data
+    zip_file(consolidated_file, True)
+
