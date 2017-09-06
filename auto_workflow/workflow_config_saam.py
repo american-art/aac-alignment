@@ -133,7 +133,7 @@ REPO_CONFIG = [
         'context_uri': context_uri,
         'model_file': 'WebObjCaption-model.ttl',
         'input_file': 'WebObjCaption.json',
-        'input_file_type': 'jsonline',
+        'input_file_type': 'jsonlines',
         'output_file_name': 'WebObjCaption',
         'num_partitions': 50
     },
