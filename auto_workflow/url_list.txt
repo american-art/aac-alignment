@@ -1,0 +1,3 @@
+https://github.com/american-art/SAAM/raw/master/consolidated_data.n3.zip saam
+https://github.com/american-art/autry/raw/master/AutryDated/AutryDated.n3.zip autry
+https://github.com/american-art/autry/raw/master/AutryObjects/AutryObjects.n3.zip autry
