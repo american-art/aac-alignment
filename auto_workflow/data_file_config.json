@@ -1,0 +1,19 @@
+[
+	{
+		"museum": "saam",
+		"drop_graph": false,
+		"dataset": "pro",
+		"data": [
+			"https://github.com/american-art/SAAM/raw/master/consolidated_data.n3.zip"
+		]
+	},
+	{
+		"museum":"autry",
+		"drop_graph": true,
+		"dataset": "dev",
+		"data": [
+			"https://github.com/american-art/autry/raw/master/AutryDated/AutryDated.n3.zip",
+			"https://github.com/american-art/autry/raw/master/AutryObjects/AutryObjects.n3.zip"
+		]
+	}
+]

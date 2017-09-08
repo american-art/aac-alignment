@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import codecs
 import shutil
+import json
 from auto_import import *
 
 TMP_FOLDER = './tmp'
@@ -15,31 +16,28 @@ def download_file(url):
                 f.write(chunk)
 
 if __name__ == '__main__':
-    # python auto_import_from_url_list.py [config list file path] [dev|pro]
-    # format of config list: [url] [museum prefix]
-    dataset = TDB_DATASET_NAME if sys.argv[2] == 'pro' else TDB_DEV_DATASET_NAME
+    # python auto_import_from_url.py [config file format in json]
+    # python auto_import_from_url.py data_file_config.json
 
     if not os.path.exists(TMP_FOLDER):
         os.mkdir(TMP_FOLDER)
     if os.path.exists(TMP_ZIP_OUTPUT):
         shutil.rmtree(TMP_ZIP_OUTPUT)
 
+
     # read config
     config_file_path = sys.argv[1]
-    config_list = {}
     with codecs.open(config_file_path, 'r') as f:
-        for line in f:
-            line = line.strip().split(' ')
-            url = line[0]
-            graph = 'default' if len(line) == 1 else (GRAPH_BASE_URL + line[1])
-            config_list[graph] = config_list.get(graph, list())
-            config_list[graph].append(url)
-
-    print config_list
+        config_list = json.loads(f.read())
+    # print config_list
 
     # download data
-    for graph, urls in config_list.iteritems():
-        for url in urls:
+    for c in config_list:
+        c['dataset'] = TDB_DATASET_NAME if c['dataset'] == 'pro' else TDB_DEV_DATASET_NAME
+        if c['drop_graph']:
+            drop_graph(c['dataset'], c['museum'])
+
+        for url in c['data']:
             download_file(url)
             zip_extract(TMP_ZIP_FILE_PATH, TMP_ZIP_OUTPUT)
 
@@ -54,7 +52,7 @@ if __name__ == '__main__':
                             if not next_chunk:
                                 break
 
-                            import_data(next_chunk, dataset, graph)
+                            import_data(next_chunk, c['dataset'], GRAPH_BASE_URL + c['museum'])
 
             os.remove(TMP_ZIP_FILE_PATH)
             shutil.rmtree(TMP_ZIP_OUTPUT)

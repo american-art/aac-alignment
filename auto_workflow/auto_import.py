@@ -42,7 +42,7 @@ def import_data(data, dataset, graph = 'default'):
         logging.info('imported into graph : ' + graph)
 
     except Exception as e:
-        logging.error(e)
+        logging.error(str(e))
 
 def drop_graph(dataset, graph):
     url = '%s/%s/update' % (FUSEKI_URL, dataset)
@@ -59,7 +59,7 @@ def drop_graph(dataset, graph):
             logging.error('drop graph: [%d]' % resp.status_code)
             return
     except Exception as e:
-        logging.error(e)
+        logging.error(str(e))
 
 def zip_extract(zip_file, output):
     try:
