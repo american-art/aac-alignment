@@ -29,7 +29,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_Objects-model.ttl',
-        'input_file': 'LOD CBMAA Objects_formatted.csv',
+        'input_file': 'LOD CBMAA Objects.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_Objects'
     },
@@ -40,7 +40,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_OtherTitles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'input_file': 'CBMAA Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_OtherTitles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -52,7 +52,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_Titles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'input_file': 'CBMAA Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_Titles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -64,7 +64,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_UnknownTitles-model.ttl',
-        'input_file': 'LOD CBMAA Titles.csv',
+        'input_file': 'CBMAA Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_UnknownTitles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -76,7 +76,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_URLs-model.ttl',
-        'input_file': 'LOD CBMAA Image URLs_with_header.csv',
+        'input_file': 'CBMAA Images_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_URLs',
     },
@@ -109,7 +109,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_Objects-model.ttl',
-        'input_file': 'LOD PG Objects_formatted.csv',
+        'input_file': 'LOD PG Objects.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_Objects'
     },
@@ -120,7 +120,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_OtherTitles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'input_file': 'PG Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_OtherTitles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -132,7 +132,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_Titles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'input_file': 'PG Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_Titles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -144,7 +144,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_UnknownTitles-model.ttl',
-        'input_file': 'LOD PG Titles.csv',
+        'input_file': 'PG Titles_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_UnknownTitles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
@@ -156,7 +156,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_URLs-model.ttl',
-        'input_file': 'LOD PG Image URLs_with_header.csv',
+        'input_file': 'PG Images_with_header.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_URLs'
     },

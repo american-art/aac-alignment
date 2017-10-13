@@ -125,18 +125,18 @@ REPO_CONFIG = [
         'output_file_name': 'Objects',
         'num_partitions': 50
     },
-    # {
-    #     'path': repo_path,
-    #     'name': 'Other_titles',
-    #     'base_uri': base_uri,
-    #     'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
-    #     'context_uri': context_uri,
-    #     'model_file': 'Other_titles-model.ttl',
-    #     'input_file': 'Titles.csv',
-    #     'input_file_type': 'csv',
-    #     'output_file_name': 'Other_titles',
-    #     'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
-    # },
+     {
+         'path': repo_path,
+         'name': 'Other_titles',
+         'base_uri': base_uri,
+         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
+         'context_uri': context_uri,
+         'model_file': 'Other_titles-model.ttl',
+         'input_file': 'Titles.csv',
+         'input_file_type': 'csv',
+         'output_file_name': 'Other_titles',
+         # 'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+     },
     {
         'path': repo_path,
         'name': 'Titles',
