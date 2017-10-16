@@ -31,7 +31,7 @@ REPO_CONFIG = [
         'input_file': 'IMA-Objects-data.csv',
         'input_file_type': 'csv',
         'output_file_name': 'IMA-Objects',
-        'num_partitions': 4
+        'num_partitions': 20
     },
     {
         'path': repo_path,

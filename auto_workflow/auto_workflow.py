@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from pyspark import SparkContext
+from pyspark import SparkContext, StorageLevel
 from pyspark.sql.functions import explode
 from py4j.java_gateway import java_import
 from digWorkflow.workflow import Workflow
@@ -14,6 +14,10 @@ import shutil
 import time
 import zipfile
 from importlib import import_module
+
+import csv
+import json
+import codecs
 
 logging.basicConfig(
     stream = sys.stdout,
@@ -87,6 +91,14 @@ def zip_file(file, delete_after_zip = False):
     if delete_after_zip:
         os.remove(file)
 
+def csv_to_json(csvfile_path, jsonfile_path):
+    with open(csvfile_path, 'rb') as csvfile:
+        with codecs.open(jsonfile_path, 'w') as jsonfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                jsonfile.write(json.dumps(row) + '\n')
+
+
 if __name__ == '__main__':
 
     # get config file
@@ -114,9 +126,14 @@ if __name__ == '__main__':
 
         # Read the input
         logging.info('read input file: ' + config['input_file'])
+
         if config['input_file_type'] == 'csv':
-            input_rdd = workflow.batch_read_csv(config['input_file']).partitionBy(config['num_partitions'])
-        elif config['input_file_type'] == 'json':
+            # input_rdd = workflow.batch_read_csv(config['input_file']).repartition(config['num_partitions'])
+            csv_to_json(config['input_file'], config['input_file'] + '.jl')
+            config['input_file'] = config['input_file'] + '.jl'
+            config['input_file_type'] = 'jsonlines'
+        
+        if config['input_file_type'] == 'json':
             input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
         elif config['input_file_type'] == 'xml':
             input_rdd = sc.wholeTextFiles(config['input_file'])
@@ -124,6 +141,8 @@ if __name__ == '__main__':
             config['input_file_type'] = "json"
             input_rdd = sc.textFile(config['input_file']).map(lambda x: ("test", json.loads(x)))
 
+        input_rdd = input_rdd.repartition(config['num_partitions']) 
+        
         # Apply the karma Model
         logging.info('apply karma model')
         output_rdd = workflow.run_karma(
@@ -134,12 +153,14 @@ if __name__ == '__main__':
             config['context_uri'],
             num_partitions = config['num_partitions'],
             data_type = config['input_file_type'],
+            batch_size = 500,
             additional_settings = config['additional_settings']
         )
 
         # Save the output
         # output_rdd.values().saveAsTextFile(config['output_file'])
-        output_rdd.values().distinct().saveAsTextFile(config['output_dir'])
+        #output_rdd.values().distinct().saveAsTextFile(config['output_dir'])
+        output_rdd.map(lambda x: x[1]).saveAsTextFile(config['output_dir'])
 
         # concatenate partitions to a single file
         concatenate_output(config['output_file'], config['output_dir'])
