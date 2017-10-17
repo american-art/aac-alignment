@@ -31,6 +31,7 @@ REPO_CONFIG = [
         'input_file': 'IMA-Objects-data.csv',
         'input_file_type': 'csv',
         'output_file_name': 'IMA-Objects',
+        'csv_to_jl': True,
         'num_partitions': 20
     },
     {

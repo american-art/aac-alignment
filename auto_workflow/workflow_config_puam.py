@@ -44,7 +44,8 @@ REPO_CONFIG = [
         'model_file': 'apiconstituents_american-model.ttl',
         'input_file': 'apiconstituents_american.json',
         'input_file_type': 'json',
-        'output_file_name': 'apiconstituents_american'
+        'output_file_name': 'apiconstituents_american',
+        'num_partitions': 20
     },
     {
         'path': repo_path,
@@ -86,8 +87,8 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'apiobjects_american-model.ttl',
-        'input_file': 'apiobjects_american.json',
-        'input_file_type': 'json',
+        'input_file': 'apiobjects_american.jl',
+        'input_file_type': 'jsonlines',
         'output_file_name': 'apiobjects_american'
     },
     {

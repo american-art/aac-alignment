@@ -42,6 +42,8 @@ def init_repo_config(config):
         config['model_file'] = name + '-model.ttl'
     if 'num_partitions' not in config:
         config['num_partitions'] = 1
+    if 'csv_to_jl' not in config:
+        config['csv_to_jl'] = False
     if 'additional_settings' not in config:
         config['additional_settings'] = {}
 
@@ -128,10 +130,12 @@ if __name__ == '__main__':
         logging.info('read input file: ' + config['input_file'])
 
         if config['input_file_type'] == 'csv':
-            # input_rdd = workflow.batch_read_csv(config['input_file']).repartition(config['num_partitions'])
-            csv_to_json(config['input_file'], config['input_file'] + '.jl')
-            config['input_file'] = config['input_file'] + '.jl'
-            config['input_file_type'] = 'jsonlines'
+            if not config['csv_to_jl']:
+                input_rdd = workflow.batch_read_csv(config['input_file']).repartition(config['num_partitions'])
+            else:
+                csv_to_json(config['input_file'], config['input_file'] + '.jl')
+                config['input_file'] = config['input_file'] + '.jl'
+                config['input_file_type'] = 'jsonlines'
         
         if config['input_file_type'] == 'json':
             input_rdd = sc.wholeTextFiles(config['input_file']).mapValues(lambda x: json.loads(x))
