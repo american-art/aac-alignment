@@ -7,7 +7,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'ccma'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/ccma/'
+base_uri = 'http://data.museum.colby.edu/aac/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
