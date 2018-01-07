@@ -7,7 +7,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'npg'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/npg/'
+base_uri = 'http://data.npg.si.edu/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
@@ -143,5 +143,16 @@ REPO_CONFIG = [
         'input_file': 'NPGObjThesTerms3.csv',
         'input_file_type': 'csv',
         'output_file_name': 'NPGObjThesTerms'
+    },
+    {
+       'path': repo_path,
+       'name': 'NPG_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'NPG_Metadata-model.ttl',
+       'input_file': 'NPG_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'NPG_Metadata'
     }
 ]

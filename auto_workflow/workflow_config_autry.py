@@ -8,7 +8,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'autry'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/autry/'
+base_uri = 'http://data.theautry.org/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
    {
@@ -71,4 +71,15 @@ REPO_CONFIG = [
        'input_file': 'AutryPubDesc.csv',
        'output_file_name': 'AutryPubDesc'
    },
+   {
+       'path': repo_path,
+       'name': 'Autry_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'Autry_Metadata-model.ttl',
+       'input_file': 'Autry_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'Autry_Metadata'
+    }
 ]

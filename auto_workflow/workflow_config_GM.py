@@ -7,7 +7,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'GM'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/GM/'
+base_uri = 'http://data.gilcrease.org/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
@@ -149,4 +149,15 @@ REPO_CONFIG = [
         'output_file_name': 'Titles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
     },
+    {
+       'path': repo_path,
+       'name': 'GM_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'GM_Metadata-model.ttl',
+       'input_file': 'GM_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'GM_Metadata'
+    }
 ]

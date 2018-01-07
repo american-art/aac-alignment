@@ -31,5 +31,16 @@ REPO_CONFIG = [
         'input_file': 'ccma_objects.json',
         'input_file_type': 'json',
         'output_file_name': 'ccma_objects'
+    },
+    {
+       'path': repo_path,
+       'name': 'CCMA_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'CCMA_Metadata-model.ttl',
+       'input_file': 'CCMA_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'CCMA_Metadata'
     }
 ]

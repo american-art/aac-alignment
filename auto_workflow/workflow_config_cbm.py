@@ -170,5 +170,16 @@ REPO_CONFIG = [
         'input_file': 'LOD PG Constituents.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_Roles'
+    },
+    {
+       'path': repo_path,
+       'name': 'CBM_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'CBM_Metadata-model.ttl',
+       'input_file': 'CBM_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'AAA_Metadata'
     }
 ]

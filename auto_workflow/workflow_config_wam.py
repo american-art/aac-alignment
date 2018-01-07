@@ -150,5 +150,16 @@ REPO_CONFIG = [
         'input_file_type': 'xml',
         'output_file_name': 'WAM_AAC_Other_titles',
         'additional_settings':{'rdf.generation.selection':'DEFAULT_TEST'}
+    },
+    {
+       'path': repo_path,
+       'name': 'WAM_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'WAM_Metadata-model.ttl',
+       'input_file': 'WAM_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'WAM_Metadata'
     }
 ]

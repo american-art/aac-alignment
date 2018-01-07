@@ -7,7 +7,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'ima'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/ima/'
+base_uri = 'http://data.imamuseum.org/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
@@ -78,4 +78,15 @@ REPO_CONFIG = [
         'input_file_type': 'csv',
         'output_file_name': 'IMA-Technique-AAT'
     },
+    {
+       'path': repo_path,
+       'name': 'IMA_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'IMA_Metadata-model.ttl',
+       'input_file': 'IMA_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'IMA_Metadata'
+    }
 ]

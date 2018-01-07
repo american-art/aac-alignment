@@ -8,7 +8,7 @@ ZIP_OUTPUT = True
 
 repo_name = 'acm'
 repo_path = './../../aac-repos/' + repo_name
-base_uri = 'http://data.americanartcollaborative.org/acm/'
+base_uri = 'http://data.cartermuseum.org/'
 context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-context.json'
 REPO_CONFIG = [
     {
@@ -176,5 +176,16 @@ REPO_CONFIG = [
        'input_file_type': 'csv',
        'output_file_name': 'acm-media'
     },
+    {
+       'path': repo_path,
+       'name': 'ACM_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'ACM_Metadata-model.ttl',
+       'input_file': 'ACM_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'ACM_Metadata'
+    }
 ]
   

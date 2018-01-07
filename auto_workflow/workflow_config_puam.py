@@ -13,7 +13,7 @@ context_uri = 'https://github.com/american-art/aac-alignment/blob/master/karma-c
 REPO_CONFIG = [
     {
         'path': repo_path,
-        'name': 'apicongeography',
+        'name': 'apicongeography_birth',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
@@ -25,7 +25,7 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apicongeography',
+        'name': 'apicongeography_death',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
         'context_uri': context_uri,
@@ -93,7 +93,7 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apiobjtitlexrefs_american',
+        'name': 'apiobjtitlexrefs_american_primary_titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
@@ -105,7 +105,7 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apiobjtitlexrefs_american',
+        'name': 'apiobjtitlexrefs_american_other_titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
@@ -117,7 +117,7 @@ REPO_CONFIG = [
     },
     {
         'path': repo_path,
-        'name': 'apiobjtitlexrefs_american',
+        'name': 'apiobjtitlexrefs_american_unknown_titles',
         'base_uri': base_uri,
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
@@ -159,5 +159,16 @@ REPO_CONFIG = [
         'input_file': 'apiobjtermsxrefs_american.json',
         'input_file_type': 'json',
         'output_file_name': 'apiobjtermsxrefs_american',
+    },
+    {
+       'path': repo_path,
+       'name': 'PUAM_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'PUAM_Metadata-model.ttl',
+       'input_file': 'PUAM_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'PUAM_Metadata'
     }
 ]
