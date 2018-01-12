@@ -29,7 +29,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'CBMAA_Objects-model.ttl',
-        'input_file': 'LOD CBMAA Objects.csv',
+        'input_file': 'LOD CBMAA Objects v2 1-2018.csv',
         'input_file_type': 'csv',
         'output_file_name': 'CBMAA_Objects'
     },
@@ -109,7 +109,7 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'PG_Objects-model.ttl',
-        'input_file': 'LOD PG Objects.csv',
+        'input_file': 'LOD PG Objects v2 1-2018.csv',
         'input_file_type': 'csv',
         'output_file_name': 'PG_Objects'
     },
