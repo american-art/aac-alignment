@@ -18,9 +18,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
        'context_uri': context_uri,
        'model_file': 'Item-model.ttl',
-       'input_file': 'Item.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item'
+       'input_file': 'Item.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -29,9 +30,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E78_Collection1',
        'context_uri': context_uri,
        'model_file': 'Item_Collections-model.ttl',
-       'input_file': 'Item_Collections.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_Collections'
+       'input_file': 'Item_Collections.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_Collections',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -40,9 +42,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Thing1',
        'context_uri': context_uri,
        'model_file': 'Item_DigitalResources-model.ttl',
-       'input_file': 'Item_DigitalResources.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_DigitalResources'
+       'input_file': 'Item_DigitalResources.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_DigitalResources',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -51,9 +54,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E5_Event1',
        'context_uri': context_uri,
        'model_file': 'Item_Events-model.ttl',
-       'input_file': 'Item_Events.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_Events'
+       'input_file': 'Item_Events.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_Events',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -62,9 +66,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
        'context_uri': context_uri,
        'model_file': 'Item_Institutions-model.ttl',
-       'input_file': 'Item_Institutions.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_Institutions'
+       'input_file': 'Item_Institutions.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_Institutions',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -73,9 +78,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
        'context_uri': context_uri,
        'model_file': 'Item_People-model.ttl',
-       'input_file': 'Item_People.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_People'
+       'input_file': 'Item_People.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_People',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -84,9 +90,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
        'context_uri': context_uri,
        'model_file': 'Item_PeopleOccupations-model.ttl',
-       'input_file': 'Item_PeopleOccupations.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_PeopleOccupations'
+       'input_file': 'Item_PeopleOccupations.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_PeopleOccupations',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -95,9 +102,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E39_Actor1',
        'context_uri': context_uri,
        'model_file': 'Item_PeoplePlaces-model.ttl',
-       'input_file': 'Item_PeoplePlaces.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_PeoplePlaces'
+       'input_file': 'Item_PeoplePlaces.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_PeoplePlaces',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -106,9 +114,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
        'context_uri': context_uri,
        'model_file': 'Item_Subjects-model.ttl',
-       'input_file': 'Item_Subjects.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_Subjects'
+       'input_file': 'Item_Subjects.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_Subjects',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -117,9 +126,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
        'context_uri': context_uri,
        'model_file': 'Item_to_Collection-model.ttl',
-       'input_file': 'Item_to_Collection.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_to_Collection'
+       'input_file': 'Item_to_Collection.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_to_Collection',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
@@ -128,9 +138,10 @@ REPO_CONFIG = [
        'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E55_Type1',
        'context_uri': context_uri,
        'model_file': 'Item_to_type-model.ttl',
-       'input_file': 'Item_to_type.csv',
-       'input_file_type': 'csv',
-       'output_file_name': 'Item_to_type'
+       'input_file': 'Item_to_type.json',
+       'input_file_type': 'jsonlines',
+       'output_file_name': 'Item_to_type',
+       'num_partitions': 50
     },
     {
        'path': repo_path,
