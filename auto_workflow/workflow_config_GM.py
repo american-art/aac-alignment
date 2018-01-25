@@ -125,7 +125,7 @@ REPO_CONFIG = [
         'output_file_name': 'Objects',
         'num_partitions': 50
     },
-     {
+    {
          'path': repo_path,
          'name': 'Other_titles',
          'base_uri': base_uri,

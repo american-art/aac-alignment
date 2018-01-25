@@ -94,7 +94,7 @@ def zip_file(file, delete_after_zip = False):
         os.remove(file)
 
 def csv_to_json(csvfile_path, jsonfile_path):
-    with open(csvfile_path, 'rb') as csvfile:
+    with open(csvfile_path, 'rbU') as csvfile:
         with codecs.open(jsonfile_path, 'w') as jsonfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
