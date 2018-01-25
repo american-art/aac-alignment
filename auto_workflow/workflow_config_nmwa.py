@@ -47,7 +47,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'NMWA_AAC_VoIDDescription',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
        'context_uri': context_uri,
        'model_file': 'NMWA_Metadata-model.ttl',
        'input_file': 'NMWA_Metadata.json',

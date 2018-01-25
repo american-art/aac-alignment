@@ -82,7 +82,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'IMA_AAC_VoIDDescription',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
        'context_uri': context_uri,
        'model_file': 'IMA_Metadata-model.ttl',
        'input_file': 'IMA_Metadata.json',

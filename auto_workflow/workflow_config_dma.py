@@ -36,7 +36,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'DMA_AAC_VoIDDescription',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
        'context_uri': context_uri,
        'model_file': 'DMA_Metadata-model.ttl',
        'input_file': 'DMA_Metadata.json',

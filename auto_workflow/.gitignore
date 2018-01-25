@@ -2,3 +2,4 @@ note.txt
 log/
 test/
 *.pyc
+*~

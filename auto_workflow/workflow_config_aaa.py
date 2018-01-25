@@ -136,7 +136,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'AAA_AAC_VoIDDescription',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
        'context_uri': context_uri,
        'model_file': 'AAA_Metadata-model.ttl',
        'input_file': 'AAA_Metadata.json',
