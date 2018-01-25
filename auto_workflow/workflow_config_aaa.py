@@ -39,7 +39,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'Item_DigitalResources',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Thing1',
+       'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E71_Man-Made_Thing1',
        'context_uri': context_uri,
        'model_file': 'Item_DigitalResources-model.ttl',
        'input_file': 'Item_DigitalResources.json',
