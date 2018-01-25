@@ -125,7 +125,7 @@ REPO_CONFIG = [
         'output_file_name': 'Objects',
         'num_partitions': 50
     },
-     {
+    {
          'path': repo_path,
          'name': 'Other_titles',
          'base_uri': base_uri,
@@ -153,7 +153,7 @@ REPO_CONFIG = [
        'path': repo_path,
        'name': 'GM_AAC_VoIDDescription',
        'base_uri': base_uri,
-       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription/DatasetDescription1',
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
        'context_uri': context_uri,
        'model_file': 'GM_Metadata-model.ttl',
        'input_file': 'GM_Metadata.json',
