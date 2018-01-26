@@ -45,7 +45,10 @@ elif [ "${ver}" == "pro" ]; then
     ./remote_auto_update_pro.sh puam
     ./remote_auto_update_pro.sh saam
     ./remote_auto_update_pro.sh wam
+
+    # import YCBA
+    # need to clone YCBA to aac-repos first
+    python auto_import.py YCBA pro
+
 fi
 
-# import YCBA
-# ./remote_auto_update_pro.sh YCBA
