@@ -1,0 +1,141 @@
+# Pubby Example Configuration
+#
+# This configuration connects to the DBpedia SPARQL endpoint and
+# re-publishes on your local machine, with dereferenceable
+# localhost URIs.
+#
+# This assumes you already have a servlet container running
+# on your machine at http://localhost:8080/ .
+#
+# Install Pubby as the root webapp of your servlet container,
+# and make sure the config-file parameter in Pubby's web.xml
+# points to this configuration file.
+#
+# Then browse to http://localhost:8080/ .
+
+# Prefix declarations to be used in RDF output
+@prefix conf: <http://richard.cyganiak.de/2007/pubby/config.rdf#> .
+@prefix meta: <http://example.org/metadata#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbpedia: <http://localhost:8080/resource/> .
+@prefix p: <http://localhost:8080/property/> .
+@prefix yago: <http://localhost:8080/class/yago/> .
+@prefix units: <http://dbpedia.org/units/> .
+@prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix prv:      <http://purl.org/net/provenance/ns#> .
+@prefix prvTypes: <http://purl.org/net/provenance/types#> .
+@prefix doap:     <http://usefulinc.com/ns/doap#> .
+@prefix void:     <http://rdfs.org/ns/void#> .
+@prefix ir:       <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#> .
+
+# Server configuration section
+<> a conf:Configuration;
+    # Project name for display in page titles
+    conf:projectName "American Art";
+
+    # Homepage with description of the project for the link in the page header
+    conf:projectHomepage <http://americanartcollaborative.org/>;
+
+    # The Pubby root, where the webapp is running inside the servlet container.
+    conf:webBase <http://data.americanartcollaborative.org/>;
+
+    # URL of an RDF file whose prefix mapping is to be used by the
+    # server; defaults to <>, which is *this* file.
+    conf:usePrefixesFrom <namespace.rdf>;
+
+    # If labels and descriptions are available in multiple languages,
+    # prefer this one.
+    # conf:defaultLanguage "en";
+
+    # dataset
+    conf:dataset [
+
+	conf:sparqlEndpoint <http://localhost:3030/american-art/query>;
+	conf:datasetBase <http://data.americanartcollaborative.org/>;
+        conf:multiURIMapping [
+                conf:multiURIPrefix "cbm";
+                conf:multiURIBase <http://data.crystalbridges.org/>;
+                conf:multiURIName "Crystal Bridges Museum of American Art";
+                conf:multiURIHomepage <http://crystalbridges.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "wam";
+                conf:multiURIBase <http://data.thewalters.org/>;
+                conf:multiURIName "The Walters Art Museum";
+                conf:multiURIHomepage <http://thewalters.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "gm";
+                conf:multiURIBase <http://data.gilcrease.org/>;
+                conf:multiURIName "Gilcrease Museum";
+                conf:multiURIHomepage <http://gilcrease.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "aaa";
+                conf:multiURIBase <http://data.aaa.si.edu/>;
+                conf:multiURIName "Archives of American Art";
+                conf:multiURIHomepage <http://aaa.si.edu/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "acm";
+                conf:multiURIBase <http://data.cartermuseum.org/>;
+                conf:multiURIName "Amon Carter Museum of American Art";
+                conf:multiURIHomepage <http://cartermuseum.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "autry";
+                conf:multiURIBase <http://data.theautry.org/>;
+                conf:multiURIName "Autry Museum of the American West";
+                conf:multiURIHomepage <http://theautry.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "ima";
+                conf:multiURIBase <http://data.imamuseum.org/>;
+                conf:multiURIName "Indianapolis Museum of Art";
+                conf:multiURIHomepage <http://imamuseum.org/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "ccma";
+                conf:multiURIBase <http://data.museum.colby.edu/aac/>;
+                conf:multiURIName "ccma";
+                conf:multiURIHomepage <http://colby.edu/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "saam";
+                conf:multiURIBase <http://data.americanart.si.edu/>;
+                conf:multiURIName "Smithsonian American Art Museum";
+                conf:multiURIHomepage <https://americanart.si.edu/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "npg";
+                conf:multiURIBase <http://data.npg.si.edu/>;
+                conf:multiURIName "Smithsonian National Portrait Gallery";
+                conf:multiURIHomepage <http://npg.si.edu/>;
+        ];
+
+        conf:multiURIMapping [
+                conf:multiURIPrefix "nmwa";
+                conf:multiURIBase <http://data.wildlifeart.org/>;
+                conf:multiURIName "National Museum of Wildlife Art";
+                conf:multiURIHomepage <http://wildlifeart.org/>;
+        ];
+
+    ];    
+.
