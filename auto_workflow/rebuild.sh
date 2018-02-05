@@ -50,5 +50,26 @@ elif [ "${ver}" == "pro" ]; then
     # need to clone YCBA to aac-repos first
     python auto_import.py YCBA pro
 
+elif [ "${ver}" == "importpro" ]; then
+    service fuseki stop
+    sleep 10s
+    rm -rf ${FUSEKI_PATH}/run/databases/american-art
+    service fuseki start
+    sleep 10s
+
+    python auto_import.py GM pro
+    python auto_import.py aaa pro
+    python auto_import.py acm pro
+    python auto_import.py autry pro
+    python auto_import.py cbm pro
+    python auto_import.py ccma pro
+    python auto_import.py dma pro
+    python auto_import.py ima pro
+    python auto_import.py nmwa pro
+    python auto_import.py npg pro
+    python auto_import.py puam pro
+    python auto_import.py saam pro
+    python auto_import.py wam pro
+
 fi
 
