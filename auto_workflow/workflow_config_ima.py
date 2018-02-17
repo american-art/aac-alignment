@@ -83,4 +83,15 @@ REPO_CONFIG = [
         'output_file_name': 'IMA-Technique-AAT',
         'num_partitions': 50
     },
+    {
+       'path': repo_path,
+       'name': 'IMA_AAC_VoIDDescription',
+       'base_uri': base_uri,
+       'rdf_root_uri': 'http://rdfs.org/ns/void#DatasetDescription1',
+       'context_uri': context_uri,
+       'model_file': 'IMA_Metadata-model.ttl',
+       'input_file': 'IMA_Metadata.json',
+       'input_file_type': 'json',
+       'output_file_name': 'IMA_Metadata'
+    }
 ]
