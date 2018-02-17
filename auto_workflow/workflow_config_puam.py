@@ -156,9 +156,10 @@ REPO_CONFIG = [
         'rdf_root_uri': 'http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1',
         'context_uri': context_uri,
         'model_file': 'apiobjtermsxrefs_american-model.ttl',
-        'input_file': 'apiobjtermsxrefs_american.json',
-        'input_file_type': 'json',
+        'input_file': 'apiobjtermsxrefs_american.json.jl',
+        'input_file_type': 'jsonlines',
         'output_file_name': 'apiobjtermsxrefs_american',
+        'num_partitions': 20
     },
     {
        'path': repo_path,
