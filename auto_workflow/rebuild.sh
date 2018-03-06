@@ -3,6 +3,7 @@ ver="${1}"
 FUSEKI_PATH=/opt/apache-jena-fuseki-2.4.0
 source ./paths.sh
 
+
 # rebuild all dev
 if [ "${ver}" == "dev" ]; then
     service fuseki stop
@@ -11,6 +12,8 @@ if [ "${ver}" == "dev" ]; then
     service fuseki start
     sleep 10s
 
+    find $AAC_ROOT/aac-repos/* -type d -name "output" | xargs -I {} rm -rf {}
+    
     ./remote_auto_update_dev.sh GM
     ./remote_auto_update_dev.sh aaa
     ./remote_auto_update_dev.sh acm
