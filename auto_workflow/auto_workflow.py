@@ -18,6 +18,7 @@ from importlib import import_module
 import csv
 import json
 import codecs
+import subprocess
 
 logging.basicConfig(
     stream = sys.stdout,
@@ -44,6 +45,8 @@ def init_repo_config(config):
         config['num_partitions'] = 1
     if 'csv_to_jl' not in config:
         config['csv_to_jl'] = False
+    if 'preprocess' not in config:
+        config['preprocess'] = None
     if 'additional_settings' not in config:
         config['additional_settings'] = {}
 
@@ -60,6 +63,11 @@ def init_repo_config(config):
     config['output_dir'] = os.path.join(abs_path, config['output_dir'])
     config['output_file'] = os.path.join(abs_path, config['output_file_name'] + '.' + config['output_file_type'])
     config['model_file'] = os.path.join(abs_path, config['model_file'])
+    if config['preprocess']:
+        config['preprocess'][0] = os.path.join(abs_path, config['preprocess'][0])
+        config['preprocess'][1] = os.path.join(abs_path, config['preprocess'][1])
+        config['preprocess'][2] = os.path.join(abs_path, config['preprocess'][2])
+        config['preprocess'] = ' '.join(config['preprocess'])
 
     # model file to uri
     if 'model_uri' not in config:
@@ -129,6 +137,11 @@ if __name__ == '__main__':
         # Read the input
         logging.info('read input file: ' + config['input_file'])
 
+        # preprocess
+        if config['preprocess']:
+            subprocess.call(config['preprocess'], shell=True)
+
+        # process
         if config['input_file_type'] == 'csv':
             if not config['csv_to_jl']:
                 input_rdd = workflow.batch_read_csv(config['input_file']).repartition(config['num_partitions'])
