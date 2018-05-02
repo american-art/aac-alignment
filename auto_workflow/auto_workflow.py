@@ -67,7 +67,7 @@ def init_repo_config(config):
         config['preprocess'][0] = os.path.join(abs_path, config['preprocess'][0])
         config['preprocess'][1] = os.path.join(abs_path, config['preprocess'][1])
         config['preprocess'][2] = os.path.join(abs_path, config['preprocess'][2])
-        config['preprocess'] = ' '.join(config['preprocess'])
+        config['preprocess'] = 'python -u ' + ' '.join(config['preprocess'])
 
     # model file to uri
     if 'model_uri' not in config:
@@ -139,6 +139,7 @@ if __name__ == '__main__':
 
         # preprocess
         if config['preprocess']:
+            logging.info('preprocessing: ' + config['preprocess'])
             subprocess.call(config['preprocess'], shell=True)
 
         # process
